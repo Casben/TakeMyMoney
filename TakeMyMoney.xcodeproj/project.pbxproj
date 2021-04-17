@@ -13,7 +13,10 @@
 		CB628385262A8EF200BEADF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB628384262A8EF200BEADF8 /* Assets.xcassets */; };
 		CB628388262A8EF200BEADF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB628386262A8EF200BEADF8 /* LaunchScreen.storyboard */; };
 		CB628393262A909900BEADF8 /* PaymentDataScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB628392262A909900BEADF8 /* PaymentDataScreen.swift */; };
-		CBA69D49262AAD9700B0BDA5 /* PaymentSelectionTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA69D48262AAD9700B0BDA5 /* PaymentSelectionTableVC.swift */; };
+		CBA69D49262AAD9700B0BDA5 /* PayPalLoginTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA69D48262AAD9700B0BDA5 /* PayPalLoginTableVC.swift */; };
+		CBA69D50262B574300B0BDA5 /* ConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA69D4F262B574300B0BDA5 /* ConfirmButton.swift */; };
+		CBA69D53262B583500B0BDA5 /* EntryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA69D52262B583500B0BDA5 /* EntryField.swift */; };
+		CBA69D56262B591700B0BDA5 /* CreditEntryTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA69D55262B591700B0BDA5 /* CreditEntryTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +28,10 @@
 		CB628387262A8EF200BEADF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB628389262A8EF200BEADF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB628392262A909900BEADF8 /* PaymentDataScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDataScreen.swift; sourceTree = "<group>"; };
-		CBA69D48262AAD9700B0BDA5 /* PaymentSelectionTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSelectionTableVC.swift; sourceTree = "<group>"; };
+		CBA69D48262AAD9700B0BDA5 /* PayPalLoginTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalLoginTableVC.swift; sourceTree = "<group>"; };
+		CBA69D4F262B574300B0BDA5 /* ConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButton.swift; sourceTree = "<group>"; };
+		CBA69D52262B583500B0BDA5 /* EntryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryField.swift; sourceTree = "<group>"; };
+		CBA69D55262B591700B0BDA5 /* CreditEntryTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditEntryTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		CB62837A262A8EF100BEADF8 /* TakeMyMoney */ = {
 			isa = PBXGroup;
 			children = (
+				CBA69D4E262B573500B0BDA5 /* View */,
 				CB628391262A8F8200BEADF8 /* Controller */,
 				CB62837B262A8EF100BEADF8 /* AppDelegate.swift */,
 				CB62837D262A8EF100BEADF8 /* SceneDelegate.swift */,
@@ -73,9 +80,19 @@
 			isa = PBXGroup;
 			children = (
 				CB628392262A909900BEADF8 /* PaymentDataScreen.swift */,
-				CBA69D48262AAD9700B0BDA5 /* PaymentSelectionTableVC.swift */,
+				CBA69D48262AAD9700B0BDA5 /* PayPalLoginTableVC.swift */,
+				CBA69D55262B591700B0BDA5 /* CreditEntryTableVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		CBA69D4E262B573500B0BDA5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBA69D4F262B574300B0BDA5 /* ConfirmButton.swift */,
+				CBA69D52262B583500B0BDA5 /* EntryField.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +165,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBA69D49262AAD9700B0BDA5 /* PaymentSelectionTableVC.swift in Sources */,
+				CBA69D49262AAD9700B0BDA5 /* PayPalLoginTableVC.swift in Sources */,
+				CBA69D53262B583500B0BDA5 /* EntryField.swift in Sources */,
 				CB62837C262A8EF100BEADF8 /* AppDelegate.swift in Sources */,
 				CB62837E262A8EF100BEADF8 /* SceneDelegate.swift in Sources */,
+				CBA69D56262B591700B0BDA5 /* CreditEntryTableVC.swift in Sources */,
+				CBA69D50262B574300B0BDA5 /* ConfirmButton.swift in Sources */,
 				CB628393262A909900BEADF8 /* PaymentDataScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

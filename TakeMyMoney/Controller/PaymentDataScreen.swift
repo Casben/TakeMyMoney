@@ -11,7 +11,6 @@ class PaymentDataScreen: UIViewController {
 
     @IBOutlet weak var payPalEntryScreen: UIView!
     @IBOutlet weak var creditEntryScreen: UIView!
-    @IBOutlet weak var confirmButton: UIButton!
     
     @IBOutlet weak var paymentControl: UISegmentedControl!
     override func viewDidLoad() {
@@ -20,41 +19,32 @@ class PaymentDataScreen: UIViewController {
     }
     
     func configure() {
-        confirmButton.layer.cornerRadius = 10
         creditEntryScreen.alpha = 0
+        paymentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        paymentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemIndigo], for: .selected)
     }
     
     
     @IBAction func segmentControlToggled(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            animatePaymentScreens(hiding: creditEntryScreen, showing: payPalEntryScreen, configureButton: "Sign In")
+            animatePaymentScreens(hiding: creditEntryScreen, showing: payPalEntryScreen)
             
             
         case 1:
-            animatePaymentScreens(hiding: payPalEntryScreen, showing: creditEntryScreen, configureButton: "Continue with Credit")
+            animatePaymentScreens(hiding: payPalEntryScreen, showing: creditEntryScreen)
             
         default:
             break
             
-        }
-    }
-    @IBAction func confirmButtonTapped(_ sender: UIButton) {
-        switch paymentControl.selectedSegmentIndex {
-        case 0:
-            print("paypal")
-        case 1:
-            print("credit")
-        default:
-            break
         }
     }
     
-    func animatePaymentScreens(hiding viewToBeHidden: UIView, showing viewToBeShown: UIView, configureButton title: String) {
-        UIView.animate(withDuration: 0.8) {
+    
+    func animatePaymentScreens(hiding viewToBeHidden: UIView, showing viewToBeShown: UIView) {
+        UIView.animate(withDuration: 0.6) {
             viewToBeHidden.alpha = 0
             viewToBeShown.alpha = 1
-            self.confirmButton.setTitle(title, for: .normal)
         }
     }
 }
