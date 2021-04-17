@@ -13,6 +13,7 @@
 		CB628385262A8EF200BEADF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB628384262A8EF200BEADF8 /* Assets.xcassets */; };
 		CB628388262A8EF200BEADF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB628386262A8EF200BEADF8 /* LaunchScreen.storyboard */; };
 		CB628393262A909900BEADF8 /* PaymentDataScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB628392262A909900BEADF8 /* PaymentDataScreen.swift */; };
+		CBA69D49262AAD9700B0BDA5 /* PaymentSelectionTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA69D48262AAD9700B0BDA5 /* PaymentSelectionTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CB628387262A8EF200BEADF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB628389262A8EF200BEADF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB628392262A909900BEADF8 /* PaymentDataScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDataScreen.swift; sourceTree = "<group>"; };
+		CBA69D48262AAD9700B0BDA5 /* PaymentSelectionTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSelectionTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				CB628392262A909900BEADF8 /* PaymentDataScreen.swift */,
+				CBA69D48262AAD9700B0BDA5 /* PaymentSelectionTableVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBA69D49262AAD9700B0BDA5 /* PaymentSelectionTableVC.swift in Sources */,
 				CB62837C262A8EF100BEADF8 /* AppDelegate.swift in Sources */,
 				CB62837E262A8EF100BEADF8 /* SceneDelegate.swift in Sources */,
 				CB628393262A909900BEADF8 /* PaymentDataScreen.swift in Sources */,
@@ -295,6 +299,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KG5A8K7RKR;
 				INFOPLIST_FILE = TakeMyMoney/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -313,6 +318,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KG5A8K7RKR;
 				INFOPLIST_FILE = TakeMyMoney/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
