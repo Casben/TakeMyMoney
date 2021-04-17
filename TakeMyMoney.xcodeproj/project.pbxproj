@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		CB62837C262A8EF100BEADF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62837B262A8EF100BEADF8 /* AppDelegate.swift */; };
 		CB62837E262A8EF100BEADF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62837D262A8EF100BEADF8 /* SceneDelegate.swift */; };
-		CB628380262A8EF100BEADF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62837F262A8EF100BEADF8 /* ViewController.swift */; };
 		CB628383262A8EF100BEADF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB628381262A8EF100BEADF8 /* Main.storyboard */; };
 		CB628385262A8EF200BEADF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB628384262A8EF200BEADF8 /* Assets.xcassets */; };
 		CB628388262A8EF200BEADF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB628386262A8EF200BEADF8 /* LaunchScreen.storyboard */; };
+		CB628393262A909900BEADF8 /* PaymentDataScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB628392262A909900BEADF8 /* PaymentDataScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CB628378262A8EF100BEADF8 /* TakeMyMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeMyMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB62837B262A8EF100BEADF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB62837D262A8EF100BEADF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CB62837F262A8EF100BEADF8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CB628382262A8EF100BEADF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB628384262A8EF200BEADF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB628387262A8EF200BEADF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB628389262A8EF200BEADF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB628392262A909900BEADF8 /* PaymentDataScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDataScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,23 @@
 		CB62837A262A8EF100BEADF8 /* TakeMyMoney */ = {
 			isa = PBXGroup;
 			children = (
+				CB628391262A8F8200BEADF8 /* Controller */,
 				CB62837B262A8EF100BEADF8 /* AppDelegate.swift */,
 				CB62837D262A8EF100BEADF8 /* SceneDelegate.swift */,
-				CB62837F262A8EF100BEADF8 /* ViewController.swift */,
 				CB628381262A8EF100BEADF8 /* Main.storyboard */,
 				CB628384262A8EF200BEADF8 /* Assets.xcassets */,
 				CB628386262A8EF200BEADF8 /* LaunchScreen.storyboard */,
 				CB628389262A8EF200BEADF8 /* Info.plist */,
 			);
 			path = TakeMyMoney;
+			sourceTree = "<group>";
+		};
+		CB628391262A8F8200BEADF8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CB628392262A909900BEADF8 /* PaymentDataScreen.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB628380262A8EF100BEADF8 /* ViewController.swift in Sources */,
 				CB62837C262A8EF100BEADF8 /* AppDelegate.swift in Sources */,
 				CB62837E262A8EF100BEADF8 /* SceneDelegate.swift in Sources */,
+				CB628393262A909900BEADF8 /* PaymentDataScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
