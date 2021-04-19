@@ -12,6 +12,8 @@ class EntryField: UITextField {
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 10
+        attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        backgroundColor = .white
     }
 
 }

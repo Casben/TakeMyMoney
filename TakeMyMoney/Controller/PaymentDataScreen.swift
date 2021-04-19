@@ -42,7 +42,7 @@ class PaymentDataScreen: UIViewController {
     
     
     func animatePaymentScreens(hiding viewToBeHidden: UIView, showing viewToBeShown: UIView) {
-        UIView.animate(withDuration: 0.6) {
+        UIView.animate(withDuration: 0.5) {
             viewToBeHidden.alpha = 0
             viewToBeShown.alpha = 1
         }

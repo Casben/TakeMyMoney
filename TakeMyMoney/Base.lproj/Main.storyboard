@@ -54,9 +54,9 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rr-Ef-8jI">
-                                <rect key="frame" x="20" y="323.66666666666674" width="350" height="500"/>
+                                <rect key="frame" x="20" y="323.66666666666674" width="350" height="450"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="beC-DI-Wm3"/>
+                                    <constraint firstAttribute="height" constant="450" id="beC-DI-Wm3"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="Xfi-re-APE" kind="embed" id="WWk-i8-Jo1"/>
@@ -163,11 +163,18 @@
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jje-oV-JXp" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="-3" width="310" height="50"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="5nE-Gh-9iC"/>
                                                     </constraints>
+                                                    <color key="textColor" systemColor="systemIndigoColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -251,7 +258,7 @@
             <objects>
                 <tableViewController id="Xfi-re-APE" customClass="CreditEntryTableVC" customModule="TakeMyMoney" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pqA-os-XJb">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="450"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
@@ -314,7 +321,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Month/ Year" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BDg-DF-oSa">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Month/ Year" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BDg-DF-oSa" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="36" width="105" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
