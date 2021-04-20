@@ -34,6 +34,10 @@ class CreditEntryTableVC: UITableViewController {
         expirationTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         cvvTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         cardHolderTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        creditCardTextfield.delegate = self
+        expirationTextField.delegate = self
+        cvvTextField.delegate = self
+        cardHolderTextField.delegate = self
     }
     
     func evaluateForm() {
@@ -67,10 +71,22 @@ class CreditEntryTableVC: UITableViewController {
         }
     }
     
+    func updateCreditCardTextField() {
+        guard let creditFieldText = creditCardTextfield.text else {return}
+        if creditFieldText.count <= 12 {
+            for char in creditFieldText {
+                let index = String(char)
+                creditCardTextfield.text?.remove(at: index.startIndex)
+                creditCardTextfield.text?.append("•")
+            }
+        }
+    }
+    
     @objc func textDidChange(sender: UITextField) {
         switch sender {
         case creditCardTextfield:
             viewModel.cardNumber = sender.text
+            updateCreditCardTextField()
         case expirationTextField:
             viewModel.expiration = sender.text
         case cvvTextField:
@@ -115,17 +131,24 @@ extension CreditEntryTableVC: UITextFieldDelegate {
         if textField == creditCardTextfield {
             let currentCount = textField.text?.count ?? 0
             if range.length + range.location > currentCount {
-                return false
+                return true
             }
             
-
             let newLength = currentCount + string.count - range.length
             return newLength <= 16
+        } else if textField == cvvTextField {
+            let currentCount = textField.text?.count ?? 0
+            if range.length + range.location > currentCount {
+                return true
+            }
+            
+            let newLength = currentCount + string.count - range.length
+            return newLength <= 4
         }
+        
         return false
         
     }
-    
-    
+
     
 }

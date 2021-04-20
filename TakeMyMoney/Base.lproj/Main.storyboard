@@ -317,7 +317,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="•••" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o06-27-os7" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="282.66666666666669" y="82.333333333333329" width="47.333333333333314" height="34"/>
+                                                    <rect key="frame" x="280" y="82.333333333333329" width="50" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="V0t-BO-Mb1"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                                 </textField>
