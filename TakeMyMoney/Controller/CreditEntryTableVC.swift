@@ -21,6 +21,8 @@ class CreditEntryTableVC: UITableViewController {
     @IBOutlet weak var confirmPurchaseButton: ConfirmButton!
     
     private var viewModel = CreditEntryViewModel()
+    
+    private var isCardHolderEntryValid = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +64,7 @@ class CreditEntryTableVC: UITableViewController {
             cvvLabel.resetLabelText()
             cvvTextField.resetField()
         }
-        if viewModel.cardHolderName == nil || viewModel.cardHolderName?.isEmpty == true {
+        if viewModel.cardHolderName == nil || viewModel.cardHolderName?.isEmpty == true || !isCardHolderEntryValid {
             cardHolderLabel.presentErrorMessage(withMessage: "Enter card holder's name.")
             cardHolderTextField.showError()
         } else {
@@ -82,6 +84,20 @@ class CreditEntryTableVC: UITableViewController {
         }
     }
     
+    func checkIfCardHolderEntryValid() {
+        if let textToBeChanged = viewModel.cardHolderName {
+            if textToBeChanged.count >= 4 && textToBeChanged.first != " " {
+                print("name is long enough and no space at the beginning")
+                if textToBeChanged.contains(" ") && textToBeChanged.last != " " {
+                    isCardHolderEntryValid = true
+                }
+            } else {
+                isCardHolderEntryValid = false
+            }
+        }
+        
+    }
+    
     @objc func textDidChange(sender: UITextField) {
         switch sender {
         case creditCardTextfield:
@@ -93,6 +109,7 @@ class CreditEntryTableVC: UITableViewController {
             viewModel.cvv = sender.text
         case cardHolderTextField:
             viewModel.cardHolderName = sender.text
+            checkIfCardHolderEntryValid()
         default:
             break
         }
@@ -107,6 +124,7 @@ class CreditEntryTableVC: UITableViewController {
     
     @IBAction func confirmButtonTapped(_ sender: UIButton) {
         evaluateForm()
+        print(cardHolderTextField.text)
         
     }
     
@@ -146,7 +164,16 @@ extension CreditEntryTableVC: UITextFieldDelegate {
             return newLength <= 4
         }
         
-        return false
+        if textField == cardHolderTextField {
+            let allowedCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                            let allowedCharacterSet = CharacterSet(charactersIn: allowedCharacters)
+                            let typedCharacterSet = CharacterSet(charactersIn: string)
+                            let alphabet = allowedCharacterSet.isSuperset(of: typedCharacterSet)
+                            return alphabet
+            
+        }
+        
+        return true
         
     }
 

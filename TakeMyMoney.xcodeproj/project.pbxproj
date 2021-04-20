@@ -11,6 +11,7 @@
 		CB542893262E86B9005EBB39 /* CreditEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542892262E86B9005EBB39 /* CreditEntryViewModel.swift */; };
 		CB542896262E87F7005EBB39 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542895262E87F7005EBB39 /* Protocols.swift */; };
 		CB54289D262E9B7A005EBB39 /* EntryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54289C262E9B7A005EBB39 /* EntryLabel.swift */; };
+		CB5428A1262F06DC005EBB39 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5428A0262F06DC005EBB39 /* Extensions.swift */; };
 		CB62837C262A8EF100BEADF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62837B262A8EF100BEADF8 /* AppDelegate.swift */; };
 		CB62837E262A8EF100BEADF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62837D262A8EF100BEADF8 /* SceneDelegate.swift */; };
 		CB628383262A8EF100BEADF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB628381262A8EF100BEADF8 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		CB542892262E86B9005EBB39 /* CreditEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditEntryViewModel.swift; sourceTree = "<group>"; };
 		CB542895262E87F7005EBB39 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		CB54289C262E9B7A005EBB39 /* EntryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryLabel.swift; sourceTree = "<group>"; };
+		CB5428A0262F06DC005EBB39 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CB628378262A8EF100BEADF8 /* TakeMyMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeMyMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB62837B262A8EF100BEADF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB62837D262A8EF100BEADF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CB54289F262F06CD005EBB39 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CB5428A0262F06DC005EBB39 /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		CB62836F262A8EF100BEADF8 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +92,7 @@
 		CB62837A262A8EF100BEADF8 /* TakeMyMoney */ = {
 			isa = PBXGroup;
 			children = (
+				CB54289F262F06CD005EBB39 /* Utilities */,
 				CB54288C262E84E8005EBB39 /* ViewModel */,
 				CBA69D4E262B573500B0BDA5 /* View */,
 				CB628391262A8F8200BEADF8 /* Controller */,
@@ -192,6 +203,7 @@
 				CBA69D56262B591700B0BDA5 /* CreditEntryTableVC.swift in Sources */,
 				CB542896262E87F7005EBB39 /* Protocols.swift in Sources */,
 				CB542893262E86B9005EBB39 /* CreditEntryViewModel.swift in Sources */,
+				CB5428A1262F06DC005EBB39 /* Extensions.swift in Sources */,
 				CBA69D50262B574300B0BDA5 /* ConfirmButton.swift in Sources */,
 				CB54288E262E8502005EBB39 /* PayPalEntryViewModel.swift in Sources */,
 				CB628393262A909900BEADF8 /* PaymentDataScreen.swift in Sources */,
