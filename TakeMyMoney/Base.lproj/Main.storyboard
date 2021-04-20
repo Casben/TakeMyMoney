@@ -125,7 +125,7 @@
         <scene sceneID="Y8q-jG-TDe">
             <objects>
                 <tableViewController id="AHz-Go-LCd" customClass="PayPalLoginTableVC" customModule="TakeMyMoney" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tMe-ym-7zf">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tMe-ym-7zf">
                         <rect key="frame" x="0.0" y="0.0" width="350" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -218,7 +218,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fai-IF-w3a" customClass="ConfirmButton" customModule="TakeMyMoney" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="-3" width="310" height="50"/>
-                                                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="9H4-sT-S0B"/>
                                                     </constraints>
@@ -257,18 +257,18 @@
         <scene sceneID="oyx-NJ-5nQ">
             <objects>
                 <tableViewController id="Xfi-re-APE" customClass="CreditEntryTableVC" customModule="TakeMyMoney" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pqA-os-XJb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pqA-os-XJb">
                         <rect key="frame" x="0.0" y="0.0" width="350" height="450"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="CNh-Ld-fm1">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="79" id="czX-bB-pj8">
-                                        <rect key="frame" x="0.0" y="28" width="350" height="79"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="11" id="czX-bB-pj8">
+                                        <rect key="frame" x="0.0" y="28" width="350" height="11"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="czX-bB-pj8" id="a4Z-Iz-ENa">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="11"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIv-VK-r4v">
@@ -298,31 +298,31 @@
                                         <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="190" id="yf2-QR-K8g">
-                                        <rect key="frame" x="0.0" y="107" width="350" height="190"/>
+                                        <rect key="frame" x="0.0" y="39" width="350" height="190"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yf2-QR-K8g" id="ZQS-7x-H6Y">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valid Until" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dl-rs-K5S">
-                                                    <rect key="frame" x="20" y="11" width="65" height="17"/>
+                                                    <rect key="frame" x="20" y="55" width="65" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CVV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6l-1S-FH8">
-                                                    <rect key="frame" x="301.33333333333331" y="11" width="28.666666666666686" height="17"/>
+                                                    <rect key="frame" x="301.33333333333331" y="55" width="28.666666666666686" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="•••" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o06-27-os7" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="282.66666666666669" y="36" width="47.333333333333314" height="34"/>
+                                                    <rect key="frame" x="282.66666666666669" y="80" width="47.333333333333314" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Month/ Year" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BDg-DF-oSa" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="36" width="105" height="34"/>
+                                                    <rect key="frame" x="20" y="80" width="105" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -341,7 +341,7 @@
                                         <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="chO-ll-Uqo">
-                                        <rect key="frame" x="0.0" y="297" width="350" height="84"/>
+                                        <rect key="frame" x="0.0" y="229" width="350" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="chO-ll-Uqo" id="ylv-hu-sQ3">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="84"/>
@@ -374,7 +374,7 @@
                                         <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="JBv-hK-KBO">
-                                        <rect key="frame" x="0.0" y="381" width="350" height="44"/>
+                                        <rect key="frame" x="0.0" y="313" width="350" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JBv-hK-KBO" id="N36-4x-anX">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
@@ -401,7 +401,7 @@
                                         <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eOn-DP-TG3">
-                                        <rect key="frame" x="0.0" y="425" width="350" height="44"/>
+                                        <rect key="frame" x="0.0" y="357" width="350" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eOn-DP-TG3" id="jag-eM-WwC">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
@@ -416,6 +416,9 @@
                                                     <state key="normal" title="Continue with Credit">
                                                         <color key="titleColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="confirmButtonTapped:" destination="Xfi-re-APE" eventType="touchUpInside" id="6Lo-hW-qAR"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -434,6 +437,17 @@
                             <outlet property="delegate" destination="Xfi-re-APE" id="1vd-nj-nkd"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="cardHolderLabel" destination="ccL-Jr-iN3" id="bqb-PH-x1O"/>
+                        <outlet property="cardHolderTextField" destination="xao-w5-ScS" id="0Tp-af-o1F"/>
+                        <outlet property="confirmPurchaseButton" destination="kwS-dm-eof" id="2UP-30-HyG"/>
+                        <outlet property="creditCardLabel" destination="lIv-VK-r4v" id="BRR-l0-epc"/>
+                        <outlet property="creditCardTextfield" destination="oza-Ep-oLk" id="R7v-KH-wHp"/>
+                        <outlet property="cvvLabel" destination="f6l-1S-FH8" id="2C8-wg-cYI"/>
+                        <outlet property="cvvTextField" destination="o06-27-os7" id="6ED-1u-ZRG"/>
+                        <outlet property="expirationLabel" destination="5Dl-rs-K5S" id="2A7-fs-aRy"/>
+                        <outlet property="expirationTextField" destination="BDg-DF-oSa" id="3RA-6Q-Fsn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MlQ-h9-Bau" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

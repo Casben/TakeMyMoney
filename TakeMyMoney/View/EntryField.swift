@@ -14,6 +14,7 @@ class EntryField: UITextField {
         layer.cornerRadius = 10
         attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         backgroundColor = .white
+        textColor = .systemIndigo
     }
 
 }

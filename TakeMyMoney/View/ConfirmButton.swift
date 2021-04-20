@@ -17,7 +17,7 @@ class ConfirmButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 10
-        backgroundColor = .systemIndigo
+        backgroundColor = .darkGray
     }
 
 }
