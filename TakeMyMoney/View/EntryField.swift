@@ -16,5 +16,14 @@ class EntryField: UITextField {
         backgroundColor = .white
         textColor = .systemIndigo
     }
+    
+    func showError() {
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.red.cgColor
+    }
+    
+    func resetField() {
+        layer.borderWidth = 0
+    }
 
 }

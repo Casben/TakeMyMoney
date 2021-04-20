@@ -10,6 +10,7 @@
 		CB54288E262E8502005EBB39 /* PayPalEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54288D262E8502005EBB39 /* PayPalEntryViewModel.swift */; };
 		CB542893262E86B9005EBB39 /* CreditEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542892262E86B9005EBB39 /* CreditEntryViewModel.swift */; };
 		CB542896262E87F7005EBB39 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542895262E87F7005EBB39 /* Protocols.swift */; };
+		CB54289D262E9B7A005EBB39 /* EntryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54289C262E9B7A005EBB39 /* EntryLabel.swift */; };
 		CB62837C262A8EF100BEADF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62837B262A8EF100BEADF8 /* AppDelegate.swift */; };
 		CB62837E262A8EF100BEADF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62837D262A8EF100BEADF8 /* SceneDelegate.swift */; };
 		CB628383262A8EF100BEADF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB628381262A8EF100BEADF8 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		CB54288D262E8502005EBB39 /* PayPalEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalEntryViewModel.swift; sourceTree = "<group>"; };
 		CB542892262E86B9005EBB39 /* CreditEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditEntryViewModel.swift; sourceTree = "<group>"; };
 		CB542895262E87F7005EBB39 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		CB54289C262E9B7A005EBB39 /* EntryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryLabel.swift; sourceTree = "<group>"; };
 		CB628378262A8EF100BEADF8 /* TakeMyMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeMyMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB62837B262A8EF100BEADF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB62837D262A8EF100BEADF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				CBA69D4F262B574300B0BDA5 /* ConfirmButton.swift */,
 				CBA69D52262B583500B0BDA5 /* EntryField.swift */,
+				CB54289C262E9B7A005EBB39 /* EntryLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				CBA69D50262B574300B0BDA5 /* ConfirmButton.swift in Sources */,
 				CB54288E262E8502005EBB39 /* PayPalEntryViewModel.swift in Sources */,
 				CB628393262A909900BEADF8 /* PaymentDataScreen.swift in Sources */,
+				CB54289D262E9B7A005EBB39 /* EntryLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,10 +9,10 @@ import UIKit
 
 class CreditEntryTableVC: UITableViewController {
     
-    @IBOutlet weak var creditCardLabel: UILabel!
-    @IBOutlet weak var expirationLabel: UILabel!
-    @IBOutlet weak var cvvLabel: UILabel!
-    @IBOutlet weak var cardHolderLabel: UILabel!
+    @IBOutlet weak var creditCardLabel: EntryLabel!
+    @IBOutlet weak var expirationLabel: EntryLabel!
+    @IBOutlet weak var cvvLabel: EntryLabel!
+    @IBOutlet weak var cardHolderLabel: EntryLabel!
     
     @IBOutlet weak var creditCardTextfield: EntryField!
     @IBOutlet weak var expirationTextField: EntryField!
@@ -29,6 +29,7 @@ class CreditEntryTableVC: UITableViewController {
     
     func configure() {
         tableView.layer.cornerRadius = 20
+        creditCardTextfield.delegate = self
         creditCardTextfield.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         expirationTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         cvvTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
@@ -36,18 +37,34 @@ class CreditEntryTableVC: UITableViewController {
     }
     
     func evaluateForm() {
-//        if viewModel.cardNumber == nil || viewModel.cardNumber?.isEmpty == true {
-//            creditCardLabel.text = "Please enter a valid credit card number."
-//            creditCardLabel.textColor = .red
-//            creditCardTextfield.layer.borderWidth = 1
-//            creditCardTextfield.layer.borderColor = UIColor.red.cgColor
-//            print("cardfield")
-//        } else if viewModel.expiration == nil || viewModel.expiration?.isEmpty == true {
-//            expirationLabel.text = "Please enter a month & year."
-//            expirationLabel.textColor = .red
-//            expirationTextField.layer.borderWidth = 1
-//            expirationTextField.layer.borderColor = UIColor.red.cgColor
-//        }
+        if viewModel.cardNumber == nil || viewModel.cardNumber?.isEmpty == true {
+            creditCardLabel.presentErrorMessage(withMessage: "Enter a valid credit card number.")
+            creditCardTextfield.showError()
+        } else {
+            creditCardLabel.resetLabelText()
+            creditCardTextfield.resetField()
+        }
+        if viewModel.expiration == nil || viewModel.expiration?.isEmpty == true {
+            expirationLabel.presentErrorMessage(withMessage: "Enter a month & year.")
+            expirationTextField.showError()
+        } else {
+            expirationLabel.resetLabelText()
+            expirationTextField.resetField()
+        }
+        if viewModel.cvv == nil || viewModel.cvv?.isEmpty == true {
+            cvvLabel.presentErrorMessage(withMessage: "Enter CVV.")
+            cvvTextField.showError()
+        } else {
+            cvvLabel.resetLabelText()
+            cvvTextField.resetField()
+        }
+        if viewModel.cardHolderName == nil || viewModel.cardHolderName?.isEmpty == true {
+            cardHolderLabel.presentErrorMessage(withMessage: "Enter card holder's name.")
+            cardHolderTextField.showError()
+        } else {
+            cardHolderLabel.resetLabelText()
+            cardHolderTextField.resetField()
+        }
     }
     
     @objc func textDidChange(sender: UITextField) {
@@ -63,11 +80,18 @@ class CreditEntryTableVC: UITableViewController {
         default:
             break
         }
-//        checkFormStatus()
+        if viewModel.cardNumber == nil && viewModel.expiration == nil && viewModel.cvv == nil && viewModel.cardHolderName == nil {
+            evaluateForm()
+        } else {
+            checkFormStatus()
+        }
     }
     
+    
+    
     @IBAction func confirmButtonTapped(_ sender: UIButton) {
-        checkFormStatus()
+        evaluateForm()
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -81,7 +105,27 @@ extension CreditEntryTableVC: AuthenticationControllerProtocol {
             confirmPurchaseButton.backgroundColor = .systemIndigo
         } else {
             confirmPurchaseButton.backgroundColor = .darkGray
-            evaluateForm()
         }
     }
+}
+
+extension CreditEntryTableVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField == creditCardTextfield {
+            let currentCount = textField.text?.count ?? 0
+            if range.length + range.location > currentCount {
+                return false
+            }
+            
+
+            let newLength = currentCount + string.count - range.length
+            return newLength <= 16
+        }
+        return false
+        
+    }
+    
+    
+    
 }
