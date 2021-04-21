@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB19C8EA262F7D1400E43858 /* ContainerPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19C8E9262F7D1400E43858 /* ContainerPaymentView.swift */; };
 		CB54288E262E8502005EBB39 /* PayPalEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54288D262E8502005EBB39 /* PayPalEntryViewModel.swift */; };
 		CB542893262E86B9005EBB39 /* CreditEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542892262E86B9005EBB39 /* CreditEntryViewModel.swift */; };
 		CB542896262E87F7005EBB39 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542895262E87F7005EBB39 /* Protocols.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB19C8E9262F7D1400E43858 /* ContainerPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerPaymentView.swift; sourceTree = "<group>"; };
 		CB54288D262E8502005EBB39 /* PayPalEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalEntryViewModel.swift; sourceTree = "<group>"; };
 		CB542892262E86B9005EBB39 /* CreditEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditEntryViewModel.swift; sourceTree = "<group>"; };
 		CB542895262E87F7005EBB39 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				CBA69D4F262B574300B0BDA5 /* ConfirmButton.swift */,
 				CBA69D52262B583500B0BDA5 /* EntryField.swift */,
 				CB54289C262E9B7A005EBB39 /* EntryLabel.swift */,
+				CB19C8E9262F7D1400E43858 /* ContainerPaymentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				CBA69D49262AAD9700B0BDA5 /* PayPalLoginTableVC.swift in Sources */,
 				CBA69D53262B583500B0BDA5 /* EntryField.swift in Sources */,
 				CB62837C262A8EF100BEADF8 /* AppDelegate.swift in Sources */,
+				CB19C8EA262F7D1400E43858 /* ContainerPaymentView.swift in Sources */,
 				CB62837E262A8EF100BEADF8 /* SceneDelegate.swift in Sources */,
 				CBA69D56262B591700B0BDA5 /* CreditEntryTableVC.swift in Sources */,
 				CB542896262E87F7005EBB39 /* Protocols.swift in Sources */,

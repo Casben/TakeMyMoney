@@ -23,6 +23,8 @@ class CreditEntryTableVC: UITableViewController {
     private var viewModel = CreditEntryViewModel()
     
     private var isCardHolderEntryValid = false
+    
+    weak var delegate: PaymentControlFlow?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +38,26 @@ class CreditEntryTableVC: UITableViewController {
         expirationTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         cvvTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         cardHolderTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        
         creditCardTextfield.delegate = self
         expirationTextField.delegate = self
         cvvTextField.delegate = self
         cardHolderTextField.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        delegate?.disableBackgroundViewWhileEditing(self.view)
+        self.view.frame.origin.y = 0 - (keyboardSize.height - 50)
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+      self.view.frame.origin.y = 0
     }
     
     func evaluateForm() {
@@ -98,7 +116,7 @@ class CreditEntryTableVC: UITableViewController {
         
     }
     
-    @objc func textDidChange(sender: UITextField) {
+    @objc func textDidChange(_ sender: UITextField) {
         switch sender {
         case creditCardTextfield:
             viewModel.cardNumber = sender.text
@@ -121,11 +139,14 @@ class CreditEntryTableVC: UITableViewController {
     }
     
     
+    @IBAction func entryFieldDidEndEditing(_ sender: EntryField) {
+        sender.resignFirstResponder()
+    }
+    
+    
     
     @IBAction func confirmButtonTapped(_ sender: UIButton) {
         evaluateForm()
-        print(cardHolderTextField.text)
-        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -170,12 +191,25 @@ extension CreditEntryTableVC: UITextFieldDelegate {
                             let typedCharacterSet = CharacterSet(charactersIn: string)
                             let alphabet = allowedCharacterSet.isSuperset(of: typedCharacterSet)
                             return alphabet
-            
         }
         
         return true
         
     }
-
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        view.resignFirstResponder()
+//    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+
 }
+
+
