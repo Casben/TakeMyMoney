@@ -53,50 +53,225 @@
                                     <action selector="segmentControlToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="PY0-QH-xcP"/>
                                 </connections>
                             </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rr-Ef-8jI">
-                                <rect key="frame" x="20" y="323.66666666666674" width="350" height="450"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofN-h2-n3l" customClass="CreditEntryScreen" customModule="TakeMyMoney" customModuleProvider="target">
+                                <rect key="frame" x="20" y="323.66666666666674" width="350" height="425"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIJ-dz-eug" customClass="EntryLabel" customModule="TakeMyMoney" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="7.9999999999999982" width="102.33333333333333" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="•••• •••• •••• ••••" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Zd-aW-bpd" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="36.333333333333314" width="334" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="lWD-kc-Er9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valid Until" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0K5-CP-9TC" customClass="EntryLabel" customModule="TakeMyMoney" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="106.33333333333331" width="76.333333333333329" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Month/ Year" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MI-35-VKu" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="134.66666666666663" width="104" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Opj-H1-Bh3"/>
+                                            <constraint firstAttribute="width" constant="104" id="nfR-ii-ReB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CVV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udA-fb-T1S" customClass="EntryLabel" customModule="TakeMyMoney" customModuleProvider="target">
+                                        <rect key="frame" x="308" y="106.33333333333331" width="34" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="•••" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qxs-uk-jac" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
+                                        <rect key="frame" x="292" y="134.66666666666663" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="4oc-KO-kNZ"/>
+                                            <constraint firstAttribute="width" constant="50" id="dIT-Z5-MTT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Holder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrL-2G-zTW" customClass="EntryLabel" customModule="TakeMyMoney" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="204.66666666666669" width="92" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First and Last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8GT-VA-fxw" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="232.99999999999994" width="334" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="sf5-bP-AWc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save card info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8q-dR-gY5" customClass="EntryLabel" customModule="TakeMyMoney" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="302.99999999999994" width="107.66666666666667" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HKl-KJ-gbS">
+                                        <rect key="frame" x="293" y="297.66666666666669" width="51" height="31"/>
+                                        <color key="onTintColor" systemColor="systemIndigoColor"/>
+                                    </switch>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVA-rP-L7S" customClass="ConfirmButton" customModule="TakeMyMoney" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="366.99999999999994" width="334" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="lFl-O7-PIE"/>
+                                        </constraints>
+                                        <state key="normal" title="Continue with Credit">
+                                            <color key="titleColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="confirmButtonTapped:" destination="ofN-h2-n3l" eventType="touchUpInside" id="tKm-ke-u90"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="450" id="beC-DI-Wm3"/>
+                                    <constraint firstItem="I8q-dR-gY5" firstAttribute="top" secondItem="8GT-VA-fxw" secondAttribute="bottom" constant="20" id="0Z0-Zh-PCx"/>
+                                    <constraint firstItem="XIJ-dz-eug" firstAttribute="leading" secondItem="ofN-h2-n3l" secondAttribute="leading" constant="8" id="0o2-AC-0Fv"/>
+                                    <constraint firstAttribute="height" constant="425" id="A3R-ff-WS9"/>
+                                    <constraint firstItem="udA-fb-T1S" firstAttribute="centerY" secondItem="0K5-CP-9TC" secondAttribute="centerY" id="CXv-Ru-SAu"/>
+                                    <constraint firstAttribute="trailing" secondItem="zVA-rP-L7S" secondAttribute="trailing" constant="8" id="Eiq-Ih-usO"/>
+                                    <constraint firstItem="HrL-2G-zTW" firstAttribute="leading" secondItem="ofN-h2-n3l" secondAttribute="leading" constant="8" id="KkP-yA-qsH"/>
+                                    <constraint firstAttribute="trailing" secondItem="zVA-rP-L7S" secondAttribute="trailing" constant="8" id="Mws-tj-qnb"/>
+                                    <constraint firstItem="9MI-35-VKu" firstAttribute="leading" secondItem="ofN-h2-n3l" secondAttribute="leading" constant="8" id="OEh-XG-hZ0"/>
+                                    <constraint firstItem="3Zd-aW-bpd" firstAttribute="leading" secondItem="ofN-h2-n3l" secondAttribute="leading" constant="8" id="Poh-b1-FCA"/>
+                                    <constraint firstAttribute="trailing" secondItem="udA-fb-T1S" secondAttribute="trailing" constant="8" id="SUd-do-1Oa"/>
+                                    <constraint firstItem="HKl-KJ-gbS" firstAttribute="centerY" secondItem="I8q-dR-gY5" secondAttribute="centerY" id="StZ-Ag-hdV"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Zd-aW-bpd" secondAttribute="trailing" constant="8" id="VLM-LR-iAk"/>
+                                    <constraint firstAttribute="trailing" secondItem="8GT-VA-fxw" secondAttribute="trailing" constant="8" id="Vgj-aI-ZZp"/>
+                                    <constraint firstItem="8GT-VA-fxw" firstAttribute="top" secondItem="HrL-2G-zTW" secondAttribute="bottom" constant="8" id="Vp9-Ff-zsg"/>
+                                    <constraint firstAttribute="bottom" secondItem="zVA-rP-L7S" secondAttribute="bottom" constant="8" id="ZEt-bl-xes"/>
+                                    <constraint firstItem="HrL-2G-zTW" firstAttribute="top" secondItem="9MI-35-VKu" secondAttribute="bottom" constant="20" id="aNj-J4-z1u"/>
+                                    <constraint firstItem="qxs-uk-jac" firstAttribute="trailing" secondItem="udA-fb-T1S" secondAttribute="trailing" id="aeJ-P5-PDl"/>
+                                    <constraint firstItem="zVA-rP-L7S" firstAttribute="leading" secondItem="ofN-h2-n3l" secondAttribute="leading" constant="8" id="cKy-xh-tWI"/>
+                                    <constraint firstItem="8GT-VA-fxw" firstAttribute="leading" secondItem="ofN-h2-n3l" secondAttribute="leading" constant="8" id="fhZ-zc-Pw4"/>
+                                    <constraint firstAttribute="trailing" secondItem="HKl-KJ-gbS" secondAttribute="trailing" constant="8" id="fwq-jD-BHc"/>
+                                    <constraint firstItem="3Zd-aW-bpd" firstAttribute="top" secondItem="XIJ-dz-eug" secondAttribute="bottom" constant="8" id="gu4-bp-Bh3"/>
+                                    <constraint firstItem="zVA-rP-L7S" firstAttribute="leading" secondItem="ofN-h2-n3l" secondAttribute="leading" constant="8" id="jjn-DS-Vb2"/>
+                                    <constraint firstItem="9MI-35-VKu" firstAttribute="top" secondItem="0K5-CP-9TC" secondAttribute="bottom" constant="8" id="kuq-vC-2ce"/>
+                                    <constraint firstItem="0K5-CP-9TC" firstAttribute="top" secondItem="3Zd-aW-bpd" secondAttribute="bottom" constant="20" id="lT6-Rr-Ltr"/>
+                                    <constraint firstItem="I8q-dR-gY5" firstAttribute="leading" secondItem="ofN-h2-n3l" secondAttribute="leading" constant="8" id="ova-ad-Nxh"/>
+                                    <constraint firstItem="0K5-CP-9TC" firstAttribute="leading" secondItem="ofN-h2-n3l" secondAttribute="leading" constant="8" id="txa-FD-gKH"/>
+                                    <constraint firstItem="qxs-uk-jac" firstAttribute="centerY" secondItem="9MI-35-VKu" secondAttribute="centerY" id="uza-aV-8EG"/>
+                                    <constraint firstItem="XIJ-dz-eug" firstAttribute="top" secondItem="ofN-h2-n3l" secondAttribute="top" constant="8" id="wjH-Sa-ORl"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="Xfi-re-APE" kind="embed" identifier="CreditSegue" id="WWk-i8-Jo1"/>
+                                    <outlet property="cardHolderLabel" destination="HrL-2G-zTW" id="stu-3j-zhx"/>
+                                    <outlet property="cardHolderTextField" destination="8GT-VA-fxw" id="QCh-i2-ekL"/>
+                                    <outlet property="confirmPurchaseButton" destination="zVA-rP-L7S" id="QEE-Ez-EJe"/>
+                                    <outlet property="creditCardLabel" destination="XIJ-dz-eug" id="7CX-3k-UtD"/>
+                                    <outlet property="creditCardTextfield" destination="3Zd-aW-bpd" id="9ZE-cv-swW"/>
+                                    <outlet property="cvvLabel" destination="udA-fb-T1S" id="L2k-xq-khd"/>
+                                    <outlet property="cvvTextField" destination="qxs-uk-jac" id="NQT-8C-r3l"/>
+                                    <outlet property="expirationLabel" destination="0K5-CP-9TC" id="MyE-Lt-zka"/>
+                                    <outlet property="expirationTextField" destination="9MI-35-VKu" id="9eQ-hA-tx0"/>
                                 </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fm7-U6-fK8">
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1W-dG-pu8" customClass="PayPalEntryScreen" customModule="TakeMyMoney" customModuleProvider="target">
                                 <rect key="frame" x="20" y="323.66666666666669" width="350" height="240.00000000000006"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with PayPal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQm-XY-sQb">
+                                        <rect key="frame" x="101.66666666666667" y="7.9999999999999982" width="146.66666666666663" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cSl-Wf-Bwg" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="36.333333333333314" width="334" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="S0P-Cp-mjM"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="systemIndigoColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xdC-Px-iiJ" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="94.333333333333314" width="334" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="BVA-df-pmJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8U-JO-yBf" customClass="ConfirmButton" customModule="TakeMyMoney" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="182" width="334" height="50"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Mfv-Or-9pM"/>
+                                        </constraints>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="avh-0S-sKI"/>
+                                    <constraint firstAttribute="trailing" secondItem="xdC-Px-iiJ" secondAttribute="trailing" constant="8" id="7ZZ-Mu-IrK"/>
+                                    <constraint firstItem="cSl-Wf-Bwg" firstAttribute="top" secondItem="TQm-XY-sQb" secondAttribute="bottom" constant="8" id="FYf-Ks-av7"/>
+                                    <constraint firstItem="X8U-JO-yBf" firstAttribute="leading" secondItem="j1W-dG-pu8" secondAttribute="leading" constant="8" id="FoQ-YC-j7X"/>
+                                    <constraint firstItem="xdC-Px-iiJ" firstAttribute="top" secondItem="cSl-Wf-Bwg" secondAttribute="bottom" constant="8" id="HK5-ex-vkP"/>
+                                    <constraint firstItem="TQm-XY-sQb" firstAttribute="top" secondItem="j1W-dG-pu8" secondAttribute="top" constant="8" id="Hsq-Ah-pFj"/>
+                                    <constraint firstItem="xdC-Px-iiJ" firstAttribute="leading" secondItem="j1W-dG-pu8" secondAttribute="leading" constant="8" id="IE8-Mq-2YN"/>
+                                    <constraint firstItem="cSl-Wf-Bwg" firstAttribute="leading" secondItem="j1W-dG-pu8" secondAttribute="leading" constant="8" id="MSB-ug-rgh"/>
+                                    <constraint firstAttribute="trailing" secondItem="cSl-Wf-Bwg" secondAttribute="trailing" constant="8" id="PRc-ey-2a8"/>
+                                    <constraint firstItem="TQm-XY-sQb" firstAttribute="centerX" secondItem="j1W-dG-pu8" secondAttribute="centerX" id="QrP-0z-EsH"/>
+                                    <constraint firstAttribute="height" constant="240" id="k4u-JN-0Zt"/>
+                                    <constraint firstAttribute="bottom" secondItem="X8U-JO-yBf" secondAttribute="bottom" constant="8" id="tb2-az-fHg"/>
+                                    <constraint firstAttribute="trailing" secondItem="X8U-JO-yBf" secondAttribute="trailing" constant="8" id="yEM-TX-KDk"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="AHz-Go-LCd" kind="embed" identifier="PayPalSegue" id="mdE-mC-4yl"/>
+                                    <outlet property="emailTextfield" destination="cSl-Wf-Bwg" id="2dj-Pd-mix"/>
+                                    <outlet property="passwordTextField" destination="xdC-Px-iiJ" id="JSx-jZ-y3g"/>
+                                    <outlet property="signInButton" destination="X8U-JO-yBf" id="2HI-ep-URW"/>
                                 </connections>
-                            </containerView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fm7-U6-fK8" firstAttribute="top" secondItem="W8M-lh-AQD" secondAttribute="bottom" constant="8" id="47a-r4-Kxu"/>
+                            <constraint firstItem="j1W-dG-pu8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3NP-4b-lag"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oYh-Mw-ahs" secondAttribute="trailing" constant="20" id="6Ok-ZS-rQI"/>
                             <constraint firstItem="W8M-lh-AQD" firstAttribute="top" secondItem="mDr-TW-m36" secondAttribute="bottom" constant="8" id="JX1-07-nwx"/>
-                            <constraint firstItem="3rr-Ef-8jI" firstAttribute="top" secondItem="W8M-lh-AQD" secondAttribute="bottom" constant="8" id="L4H-Sy-Ypf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fm7-U6-fK8" secondAttribute="trailing" constant="20" id="SHz-RO-IYI"/>
+                            <constraint firstItem="j1W-dG-pu8" firstAttribute="top" secondItem="W8M-lh-AQD" secondAttribute="bottom" constant="8" id="KE8-Sx-jCc"/>
                             <constraint firstItem="mDr-TW-m36" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TPV-hw-qqG"/>
                             <constraint firstItem="oYh-Mw-ahs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UeF-H2-MU0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3rr-Ef-8jI" secondAttribute="trailing" constant="20" id="Uhy-Uy-vm4"/>
                             <constraint firstItem="W8M-lh-AQD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WBs-cr-ixJ"/>
                             <constraint firstItem="mDr-TW-m36" firstAttribute="top" secondItem="oYh-Mw-ahs" secondAttribute="bottom" constant="20" id="Z94-hP-QGo"/>
                             <constraint firstItem="oYh-Mw-ahs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="axu-kG-tIv"/>
-                            <constraint firstItem="3rr-Ef-8jI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cH2-7Z-THq"/>
+                            <constraint firstItem="ofN-h2-n3l" firstAttribute="top" secondItem="W8M-lh-AQD" secondAttribute="bottom" constant="8" id="bOQ-Z8-e6B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j1W-dG-pu8" secondAttribute="trailing" constant="20" id="bUo-OV-TkW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W8M-lh-AQD" secondAttribute="trailing" constant="20" id="eZK-QW-Rfm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ofN-h2-n3l" secondAttribute="trailing" constant="20" id="g4t-tM-lBF"/>
                             <constraint firstItem="W8M-lh-AQD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iQ7-85-Bo7"/>
-                            <constraint firstItem="fm7-U6-fK8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zvC-gu-U6b"/>
+                            <constraint firstItem="ofN-h2-n3l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xWS-Nc-V3T"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Payment Info" id="Lkq-x3-uhR"/>
                     <connections>
-                        <outlet property="creditEntryScreen" destination="3rr-Ef-8jI" id="o0Q-MR-SoW"/>
-                        <outlet property="payPalEntryScreen" destination="fm7-U6-fK8" id="up0-nG-anx"/>
+                        <outlet property="creditEntryScreen" destination="ofN-h2-n3l" id="yFQ-fe-UCd"/>
+                        <outlet property="payPalEntryScreen" destination="j1W-dG-pu8" id="yy1-v7-Su6"/>
                         <outlet property="paymentControl" destination="W8M-lh-AQD" id="6Ib-eM-LMr"/>
+                        <outlet property="paymentLabel" destination="mDr-TW-m36" id="17z-Vt-QBc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -121,359 +296,12 @@
             </objects>
             <point key="canvasLocation" x="95.652173913043484" y="93.75"/>
         </scene>
-        <!--Pay Pal Login TableVC-->
-        <scene sceneID="Y8q-jG-TDe">
-            <objects>
-                <tableViewController id="AHz-Go-LCd" customClass="PayPalLoginTableVC" customModule="TakeMyMoney" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tMe-ym-7zf">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="240"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <sections>
-                            <tableViewSection id="awR-Nq-t7z">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="LPp-Tk-iMe">
-                                        <rect key="frame" x="0.0" y="28" width="350" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LPp-Tk-iMe" id="a6x-mD-4AR">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with PayPal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXJ-hy-JQJ">
-                                                    <rect key="frame" x="20" y="11.666666666666664" width="147" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="EXJ-hy-JQJ" firstAttribute="leading" secondItem="a6x-mD-4AR" secondAttribute="leadingMargin" id="c3y-H0-dTJ"/>
-                                                <constraint firstItem="EXJ-hy-JQJ" firstAttribute="centerY" secondItem="a6x-mD-4AR" secondAttribute="centerY" id="cEH-BO-90S"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EXJ-hy-JQJ" secondAttribute="trailing" constant="20" symbolic="YES" id="ooa-Q5-0el"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="gij-bU-3uS">
-                                        <rect key="frame" x="0.0" y="71.5" width="350" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gij-bU-3uS" id="u5O-WO-HgV">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jje-oV-JXp" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="-3" width="310" height="50"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="5nE-Gh-9iC"/>
-                                                    </constraints>
-                                                    <color key="textColor" systemColor="systemIndigoColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Jje-oV-JXp" firstAttribute="centerY" secondItem="u5O-WO-HgV" secondAttribute="centerY" id="1jg-F7-P7d"/>
-                                                <constraint firstItem="Jje-oV-JXp" firstAttribute="leading" secondItem="u5O-WO-HgV" secondAttribute="leading" constant="20" id="Dxa-70-Tj1"/>
-                                                <constraint firstAttribute="trailing" secondItem="Jje-oV-JXp" secondAttribute="trailing" constant="20" id="qid-l0-j2h"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mc6-0d-SA5">
-                                        <rect key="frame" x="0.0" y="115" width="350" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mc6-0d-SA5" id="7HJ-3Q-QhI">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZIt-8c-h24" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="-3" width="310" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="4Pr-LE-lmh"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="ZIt-8c-h24" secondAttribute="trailing" constant="20" id="SEg-3p-Blb"/>
-                                                <constraint firstItem="ZIt-8c-h24" firstAttribute="centerY" secondItem="7HJ-3Q-QhI" secondAttribute="centerY" id="iE2-q6-Yv4"/>
-                                                <constraint firstItem="ZIt-8c-h24" firstAttribute="leading" secondItem="7HJ-3Q-QhI" secondAttribute="leading" constant="20" id="xJ0-nu-Ibt"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1Rg-2p-rfp">
-                                        <rect key="frame" x="0.0" y="158.5" width="350" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Rg-2p-rfp" id="0F4-gy-4WY">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fai-IF-w3a" customClass="ConfirmButton" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="-3" width="310" height="50"/>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="9H4-sT-S0B"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Sign In">
-                                                        <color key="titleColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Fai-IF-w3a" firstAttribute="centerY" secondItem="0F4-gy-4WY" secondAttribute="centerY" id="8PI-KE-CWY"/>
-                                                <constraint firstAttribute="trailing" secondItem="Fai-IF-w3a" secondAttribute="trailing" constant="20" id="KE6-Ks-xKf"/>
-                                                <constraint firstItem="Fai-IF-w3a" firstAttribute="centerX" secondItem="0F4-gy-4WY" secondAttribute="centerX" id="kLx-gJ-41U"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="AHz-Go-LCd" id="2RG-oh-d9l"/>
-                            <outlet property="delegate" destination="AHz-Go-LCd" id="GF2-Vo-Mna"/>
-                        </connections>
-                    </tableView>
-                    <connections>
-                        <outlet property="emailTextfield" destination="Jje-oV-JXp" id="XUu-qs-jct"/>
-                        <outlet property="passwordTextField" destination="ZIt-8c-h24" id="acb-f3-WwW"/>
-                        <outlet property="signInButton" destination="Fai-IF-w3a" id="Cqq-Oz-NoI"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P7q-FL-YBP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="569" y="678"/>
-        </scene>
-        <!--Credit Entry TableVC-->
-        <scene sceneID="oyx-NJ-5nQ">
-            <objects>
-                <tableViewController id="Xfi-re-APE" customClass="CreditEntryTableVC" customModule="TakeMyMoney" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pqA-os-XJb">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="450"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <sections>
-                            <tableViewSection id="CNh-Ld-fm1">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="163" id="czX-bB-pj8">
-                                        <rect key="frame" x="0.0" y="28" width="350" height="163"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="czX-bB-pj8" id="a4Z-Iz-ENa">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="163"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIv-VK-r4v" customClass="EntryLabel" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="19.999999999999993" y="55.000000000000007" width="102.33333333333331" height="19.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="•••• •••• •••• ••••" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oza-Ep-oLk" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="82.333333333333329" width="310" height="49.999999999999986"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="K4g-Xs-bDS"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                    <connections>
-                                                        <action selector="entryFieldDidEndEditing:" destination="Xfi-re-APE" eventType="editingDidEnd" id="XCe-gI-ubF"/>
-                                                    </connections>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="lIv-VK-r4v" firstAttribute="top" secondItem="a4Z-Iz-ENa" secondAttribute="topMargin" id="N9F-Ud-Q4u"/>
-                                                <constraint firstAttribute="trailing" secondItem="oza-Ep-oLk" secondAttribute="trailing" constant="20" symbolic="YES" id="X1F-M0-Ksn"/>
-                                                <constraint firstItem="lIv-VK-r4v" firstAttribute="leading" secondItem="a4Z-Iz-ENa" secondAttribute="leadingMargin" id="abW-ml-0Dc"/>
-                                                <constraint firstItem="oza-Ep-oLk" firstAttribute="leading" secondItem="a4Z-Iz-ENa" secondAttribute="leading" constant="20" symbolic="YES" id="h27-PN-FXl"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lIv-VK-r4v" secondAttribute="trailing" constant="20" symbolic="YES" id="nO1-pR-AyG"/>
-                                                <constraint firstItem="oza-Ep-oLk" firstAttribute="top" secondItem="lIv-VK-r4v" secondAttribute="bottom" constant="8" symbolic="YES" id="qBf-Vs-ECI"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="161" id="yf2-QR-K8g">
-                                        <rect key="frame" x="0.0" y="191" width="350" height="161"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yf2-QR-K8g" id="ZQS-7x-H6Y">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="161"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valid Until" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dl-rs-K5S" customClass="EntryLabel" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="55.000000000000007" width="76.333333333333329" height="19.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CVV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6l-1S-FH8" customClass="EntryLabel" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="296" y="55.000000000000007" width="34" height="19.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="•••" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o06-27-os7" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="280" y="82.333333333333329" width="50" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="V0t-BO-Mb1"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
-                                                    <connections>
-                                                        <action selector="entryFieldDidEndEditing:" destination="Xfi-re-APE" eventType="editingDidEnd" id="KWr-bE-6hK"/>
-                                                    </connections>
-                                                </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Month/ Year" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BDg-DF-oSa" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="82.333333333333329" width="105" height="34"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <connections>
-                                                        <action selector="entryFieldDidEndEditing:" destination="Xfi-re-APE" eventType="editingDidEnd" id="Dxd-tK-ITf"/>
-                                                    </connections>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="f6l-1S-FH8" firstAttribute="top" secondItem="5Dl-rs-K5S" secondAttribute="top" id="101-jg-edp"/>
-                                                <constraint firstItem="5Dl-rs-K5S" firstAttribute="leading" secondItem="ZQS-7x-H6Y" secondAttribute="leadingMargin" id="9Vm-tr-FNQ"/>
-                                                <constraint firstItem="BDg-DF-oSa" firstAttribute="top" secondItem="5Dl-rs-K5S" secondAttribute="bottom" constant="8" symbolic="YES" id="AmH-Xp-3z7"/>
-                                                <constraint firstItem="BDg-DF-oSa" firstAttribute="leading" secondItem="ZQS-7x-H6Y" secondAttribute="leadingMargin" id="Fl0-Sr-exD"/>
-                                                <constraint firstItem="o06-27-os7" firstAttribute="top" secondItem="f6l-1S-FH8" secondAttribute="bottom" constant="8" symbolic="YES" id="Khk-EL-CwT"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="f6l-1S-FH8" secondAttribute="trailing" id="NDN-FX-oUZ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="o06-27-os7" secondAttribute="trailing" id="S94-mR-IMx"/>
-                                                <constraint firstItem="5Dl-rs-K5S" firstAttribute="top" secondItem="ZQS-7x-H6Y" secondAttribute="topMargin" id="rmQ-7b-NeL"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="chO-ll-Uqo">
-                                        <rect key="frame" x="0.0" y="352" width="350" height="84"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="chO-ll-Uqo" id="ylv-hu-sQ3">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="84"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Holder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccL-Jr-iN3" customClass="EntryLabel" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="0.0" width="92" height="20.333333333333332"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First and Last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xao-w5-ScS" customClass="EntryField" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="28.333333333333329" width="310" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="Zk6-La-uDn"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <connections>
-                                                        <action selector="entryFieldDidEndEditing:" destination="Xfi-re-APE" eventType="editingDidEnd" id="bFQ-YG-Qu9"/>
-                                                    </connections>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="xao-w5-ScS" firstAttribute="trailing" secondItem="ylv-hu-sQ3" secondAttribute="trailingMargin" id="IjE-uY-15m"/>
-                                                <constraint firstItem="ccL-Jr-iN3" firstAttribute="top" secondItem="ylv-hu-sQ3" secondAttribute="top" id="JQm-fo-aDK"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ccL-Jr-iN3" secondAttribute="trailing" constant="20" symbolic="YES" id="KY8-pu-kLn"/>
-                                                <constraint firstItem="xao-w5-ScS" firstAttribute="top" secondItem="ccL-Jr-iN3" secondAttribute="bottom" constant="8" symbolic="YES" id="Tnl-k1-VD5"/>
-                                                <constraint firstItem="ccL-Jr-iN3" firstAttribute="leading" secondItem="ylv-hu-sQ3" secondAttribute="leading" constant="20" symbolic="YES" id="X3I-5M-VVk"/>
-                                                <constraint firstItem="xao-w5-ScS" firstAttribute="leading" secondItem="ylv-hu-sQ3" secondAttribute="leadingMargin" id="Zs2-mm-Y9o"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="101" id="JBv-hK-KBO">
-                                        <rect key="frame" x="0.0" y="436" width="350" height="101"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JBv-hK-KBO" id="N36-4x-anX">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="101"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save card info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auP-8W-tA8" customClass="EntryLabel" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="20.000000000000007" y="40" width="107.66666666666669" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cyD-Tq-Hfg">
-                                                    <rect key="frame" x="281" y="35" width="51" height="31"/>
-                                                    <color key="onTintColor" systemColor="systemIndigoColor"/>
-                                                </switch>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="cyD-Tq-Hfg" firstAttribute="centerY" secondItem="N36-4x-anX" secondAttribute="centerY" id="Ccg-AB-awY"/>
-                                                <constraint firstItem="auP-8W-tA8" firstAttribute="centerY" secondItem="N36-4x-anX" secondAttribute="centerY" id="pdu-tt-R49"/>
-                                                <constraint firstAttribute="trailing" secondItem="cyD-Tq-Hfg" secondAttribute="trailing" constant="20" symbolic="YES" id="uBk-Cr-wub"/>
-                                                <constraint firstItem="auP-8W-tA8" firstAttribute="leading" secondItem="N36-4x-anX" secondAttribute="leadingMargin" id="vso-rl-nF8"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eOn-DP-TG3">
-                                        <rect key="frame" x="0.0" y="537" width="350" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eOn-DP-TG3" id="jag-eM-WwC">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwS-dm-eof" customClass="ConfirmButton" customModule="TakeMyMoney" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="-3" width="310" height="50"/>
-                                                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="VKf-Zd-sHU"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Continue with Credit">
-                                                        <color key="titleColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="confirmButtonTapped:" destination="Xfi-re-APE" eventType="touchUpInside" id="6Lo-hW-qAR"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="kwS-dm-eof" secondAttribute="trailing" constant="20" id="ZeI-Ik-Cxa"/>
-                                                <constraint firstItem="kwS-dm-eof" firstAttribute="centerX" secondItem="jag-eM-WwC" secondAttribute="centerX" id="oVg-E5-w2p"/>
-                                                <constraint firstItem="kwS-dm-eof" firstAttribute="centerY" secondItem="jag-eM-WwC" secondAttribute="centerY" id="tAf-Mo-J4H"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="Xfi-re-APE" id="uEp-Az-bo3"/>
-                            <outlet property="delegate" destination="Xfi-re-APE" id="1vd-nj-nkd"/>
-                        </connections>
-                    </tableView>
-                    <connections>
-                        <outlet property="cardHolderLabel" destination="ccL-Jr-iN3" id="bqb-PH-x1O"/>
-                        <outlet property="cardHolderTextField" destination="xao-w5-ScS" id="0Tp-af-o1F"/>
-                        <outlet property="confirmPurchaseButton" destination="kwS-dm-eof" id="2UP-30-HyG"/>
-                        <outlet property="creditCardLabel" destination="lIv-VK-r4v" id="BRR-l0-epc"/>
-                        <outlet property="creditCardTextfield" destination="oza-Ep-oLk" id="R7v-KH-wHp"/>
-                        <outlet property="cvvLabel" destination="f6l-1S-FH8" id="2C8-wg-cYI"/>
-                        <outlet property="cvvTextField" destination="o06-27-os7" id="6ED-1u-ZRG"/>
-                        <outlet property="expirationLabel" destination="5Dl-rs-K5S" id="2A7-fs-aRy"/>
-                        <outlet property="expirationTextField" destination="BDg-DF-oSa" id="3RA-6Q-Fsn"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MlQ-h9-Bau" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1560" y="699.52606635071083"/>
-        </scene>
     </scenes>
     <designables>
-        <designable name="Fai-IF-w3a">
+        <designable name="X8U-JO-yBf">
             <size key="intrinsicContentSize" width="47" height="30"/>
         </designable>
-        <designable name="kwS-dm-eof">
+        <designable name="zVA-rP-L7S">
             <size key="intrinsicContentSize" width="141" height="30"/>
         </designable>
     </designables>

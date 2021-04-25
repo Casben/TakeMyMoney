@@ -12,8 +12,9 @@ class PaymentDataScreen: UIViewController {
     @IBOutlet weak var payPalEntryScreen: UIView!
     @IBOutlet weak var creditEntryScreen: UIView!
     @IBOutlet weak var paymentControl: UISegmentedControl!
-    var payPalTableVC: PayPalLoginTableVC!
-    var creditTableVC: CreditEntryTableVC!
+    @IBOutlet weak var paymentLabel: UILabel!
+    var payPalTableVC: PayPalEntryScreen!
+    var creditTableVC: CreditEntryScreen!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,17 +23,10 @@ class PaymentDataScreen: UIViewController {
     
     func configure() {
         creditEntryScreen.alpha = 0
+        creditEntryScreen.isHidden = true
         paymentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         paymentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let payPalTableVC = segue.destination as? PayPalLoginTableVC, segue.identifier == "PayPalSegue" {
-            self.payPalTableVC = payPalTableVC
-            payPalTableVC.delegate = self
-        } else if let creditTableVC = segue.destination as? CreditEntryTableVC, segue.identifier == "CreditSegue" {
-            creditTableVC.delegate = self
-        }
+        
     }
     
     
@@ -40,11 +34,8 @@ class PaymentDataScreen: UIViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             animatePaymentScreens(hiding: creditEntryScreen, showing: payPalEntryScreen)
-            
-            
         case 1:
             animatePaymentScreens(hiding: payPalEntryScreen, showing: creditEntryScreen)
-            
         default:
             break
             
@@ -53,19 +44,32 @@ class PaymentDataScreen: UIViewController {
     
     
     func animatePaymentScreens(hiding viewToBeHidden: UIView, showing viewToBeShown: UIView) {
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.75) {
             viewToBeShown.alpha = 1
             viewToBeHidden.alpha = 0
+            viewToBeShown.isHidden = false
+            viewToBeHidden.isHidden = true
             
         }
     }
 }
 
-extension PaymentDataScreen: PaymentControlFlow {
-    func disableBackgroundViewWhileEditing(_ view: UIView) {
-//        view.bringSubviewToFront(creditEntryScreen)
-        print("delegate")
-        paymentControl.alpha = 0
-        navigationController?.navigationBar.isHidden = true
+extension PaymentDataScreen: PayPalPaymentControlFlow {
+    func disableBackgroundForPayPal() {
+        creditEntryScreen.isHidden = true
+        print("paypal called")
+    }
+    
+    
+}
+
+extension PaymentDataScreen: CreditPaymentControlFlow {
+    func disableBackgroundForCredit() {
+        payPalEntryScreen.isHidden = true
+        print("credit called")
     }
 }
+
+
+
+
