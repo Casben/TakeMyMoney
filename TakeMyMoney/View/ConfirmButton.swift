@@ -7,17 +7,14 @@
 
 import UIKit
 
-@IBDesignable
+
 class ConfirmButton: UIButton {
 
-    override func prepareForInterfaceBuilder() {
-        layer.cornerRadius = 4
-    }
+    //MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 10
         backgroundColor = .darkGray
     }
-
 }

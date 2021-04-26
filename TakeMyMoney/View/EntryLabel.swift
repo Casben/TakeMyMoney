@@ -9,9 +9,13 @@ import UIKit
 
 class EntryLabel: UILabel {
     
+    //MARK: - Properties
+    
     final var originalLabelText: String!
     final var originalTextColor: UIColor!
 
+    //MARK: - Lifecycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         font.withSize(17)
@@ -19,6 +23,8 @@ class EntryLabel: UILabel {
         originalTextColor = textColor
     }
     
+    
+    //MARK: - Methods
     
     func presentErrorMessage(withMessage message: String) {
         text = message

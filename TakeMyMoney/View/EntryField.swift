@@ -9,6 +9,8 @@ import UIKit
 
 class EntryField: UITextField {
 
+    //MARK: - Lifecycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 10
@@ -16,6 +18,8 @@ class EntryField: UITextField {
         backgroundColor = .white
         textColor = .systemIndigo
     }
+    
+    //MARK: - Methods
     
     func showError() {
         layer.borderWidth = 1

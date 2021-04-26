@@ -7,12 +7,17 @@
 
 import UIKit
 
+
+//MARK: - CreditPaymentControlFlow
+
 protocol CreditPaymentControlFlow: class {
     func disableBackgroundForCredit()
     func proceedWithCredit()
 }
 
 class CreditEntryScreen: UIView {
+    
+    //MARK: - Properties
     
     @IBOutlet weak var creditCardLabel: EntryLabel!
     @IBOutlet weak var expirationLabel: EntryLabel!
@@ -26,17 +31,20 @@ class CreditEntryScreen: UIView {
     @IBOutlet weak var confirmPurchaseButton: ConfirmButton!
     
     private var viewModel = CreditEntryViewModel()
-    let expirationPicker = UIPickerView()
-    var editingResponder: UITextField?
+    private let expirationPicker = UIPickerView()
+    private var editingResponder: UITextField?
     
     private var isCardHolderEntryValid = false
     
     weak var delegate: CreditPaymentControlFlow?
 
+    //MARK: - Lifecycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configure()
     }
+    //MARK: - Configuration
     
     func configure() {
         layer.cornerRadius = 20
@@ -58,12 +66,13 @@ class CreditEntryScreen: UIView {
         expirationPicker.delegate = self
         expirationPicker.dataSource = self
         expirationTextField.inputView = expirationPicker
-        addDoneButtonOnKeyboard()
-        
+        addDoneButtonToKeyboard()
     }
     
 
+    //MARK: - Methods
     
+    //Evaluates the forms status and wether or not to show errors or reset UI.
     func evaluateForm() {
         if viewModel.cardNumber == nil || viewModel.cardNumber?.isEmpty == true || viewModel.cardNumber?.count != 16 {
             creditCardLabel.presentErrorMessage(withMessage: "Enter a valid credit card number.")
@@ -95,6 +104,7 @@ class CreditEntryScreen: UIView {
         }
     }
     
+    // Masks the creditCardTextField to hide the first 12 characters and show the remaining 4.
     func updateCreditCardTextField() {
         guard let creditFieldText = creditCardTextfield.text else {return}
         if creditFieldText.count <= 12 {
@@ -106,6 +116,7 @@ class CreditEntryScreen: UIView {
         }
     }
     
+    // checks if the cardHolderName is longer than 4 characters and DOES NOT contain a space at the begining of the string. Second check makes sure that the string does contain a space but not a space at the end of the string.
     func checkIfCardHolderEntryIsValid() {
         if let validCardHolderName = viewModel.cardHolderName {
             if validCardHolderName.count >= 4 && validCardHolderName.first != " " {
@@ -120,8 +131,8 @@ class CreditEntryScreen: UIView {
         
     }
     
-        
-    func addDoneButtonOnKeyboard() {
+    // adds a done button to the keyboard to make keyboard management as the UITextFieldDelegate method textFieldShouldReturn is not implemented.
+    func addDoneButtonToKeyboard() {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         doneToolbar.barStyle = .default
         
@@ -139,6 +150,8 @@ class CreditEntryScreen: UIView {
         cardHolderTextField.inputAccessoryView = doneToolbar
         
     }
+    
+    //MARK: - Actions
     
     @objc func doneButtonAction() {
         editingResponder?.resignFirstResponder()
@@ -177,26 +190,30 @@ class CreditEntryScreen: UIView {
             if editingResponder != nil {
                 editingResponder?.resignFirstResponder()
             }
+            delegate?.proceedWithCredit()
             viewModel.resetViewModel()
             resetTextFields(creditCardTextfield, expirationTextField, cvvTextField, cardHolderTextField)
             resetLabels(creditCardLabel, expirationLabel, cvvLabel, cardHolderLabel)
-            delegate?.proceedWithCredit()
+            checkFormStatus()
         } else {
             evaluateForm()
         }
     }
 }
 
+//MARK: - AuthenticationControllerProtocol
+
 extension CreditEntryScreen: AuthenticationControllerProtocol {
     func checkFormStatus() {
         if viewModel.formIsValid {
             confirmPurchaseButton.backgroundColor = .systemIndigo
-            print("PROCEEEEED")
         } else {
             confirmPurchaseButton.backgroundColor = .darkGray
         }
     }
 }
+
+//MARK: - UITextFieldDelgate
 
 extension CreditEntryScreen: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -221,31 +238,16 @@ extension CreditEntryScreen: UITextFieldDelegate {
         
         if textField == cardHolderTextField {
             let allowedCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
-                            let allowedCharacterSet = CharacterSet(charactersIn: allowedCharacters)
-                            let typedCharacterSet = CharacterSet(charactersIn: string)
-                            let alphabet = allowedCharacterSet.isSuperset(of: typedCharacterSet)
-                            return alphabet
+            let allowedCharacterSet = CharacterSet(charactersIn: allowedCharacters)
+            let typedCharacterSet = CharacterSet(charactersIn: string)
+            let alphabet = allowedCharacterSet.isSuperset(of: typedCharacterSet)
+            return alphabet
         }
-        
-        return true
-        
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
         return true
     }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.resignFirstResponder()
-    }
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        return true
-    }
-
 }
 
+//MARK: - UIPickerViewDelegate & UIPickerViewDataSource
 
 extension CreditEntryScreen: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

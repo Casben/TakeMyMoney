@@ -49,9 +49,6 @@
                                     <segment title="PayPal"/>
                                     <segment title="Credit"/>
                                 </segments>
-                                <connections>
-                                    <action selector="segmentControlToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="PY0-QH-xcP"/>
-                                </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofN-h2-n3l" customClass="CreditEntryScreen" customModule="TakeMyMoney" customModuleProvider="target">
                                 <rect key="frame" x="20" y="323.66666666666674" width="350" height="425"/>
@@ -296,14 +293,6 @@
             <point key="canvasLocation" x="95.652173913043484" y="93.75"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="X8U-JO-yBf">
-            <size key="intrinsicContentSize" width="47" height="30"/>
-        </designable>
-        <designable name="zVA-rP-L7S">
-            <size key="intrinsicContentSize" width="141" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

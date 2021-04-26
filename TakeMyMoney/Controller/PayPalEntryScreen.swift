@@ -7,6 +7,8 @@
 
 import UIKit
 
+//MARK: - PayPalPaymentControlFlow
+
 protocol PayPalPaymentControlFlow: class {
     func disableBackgroundForPayPal()
     func proceedWithPayPal()
@@ -14,6 +16,8 @@ protocol PayPalPaymentControlFlow: class {
 
 class PayPalEntryScreen: UIView {
 
+    //MARK: - Properties
+    
     @IBOutlet weak var emailTextfield: EntryField!
     @IBOutlet weak var passwordTextField: EntryField!
     @IBOutlet weak var signInButton: UIButton!
@@ -21,10 +25,14 @@ class PayPalEntryScreen: UIView {
     private var viewModel = PayPalEntryViewModel()
     weak var delegate: PayPalPaymentControlFlow?
     
+    //MARK: - Lifecycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configure()
     }
+    
+    //MARK: - Configuration
     
     func configure() {
         layer.cornerRadius = 20
@@ -40,6 +48,7 @@ class PayPalEntryScreen: UIView {
     }
     
     
+    //MARK: - Actions
     
     @objc func textDidChange(_ sender: UITextField) {
         switch sender {
@@ -66,9 +75,12 @@ class PayPalEntryScreen: UIView {
         delegate?.proceedWithPayPal()
         viewModel.resetViewModel()
         resetTextFields(emailTextfield, passwordTextField)
+        checkFormStatus()
     }
 
 }
+
+//MARK: - AuthenticationControllerProtocol
 
 extension PayPalEntryScreen: AuthenticationControllerProtocol {
     func checkFormStatus() {
@@ -82,13 +94,12 @@ extension PayPalEntryScreen: AuthenticationControllerProtocol {
     }
 }
 
+//MARK: - UITextFieldDelegate
+
 extension PayPalEntryScreen: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        return true
-    }
+
 }
