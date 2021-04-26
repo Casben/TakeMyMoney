@@ -17,5 +17,10 @@ struct CreditEntryViewModel: AuthenticationProtocol {
         return cardNumber?.isEmpty == false && expiration?.isEmpty == false && cvv?.isEmpty == false && cardHolderName?.isEmpty == false
     }
     
-    
+    mutating func resetViewModel() {
+        cardNumber = nil
+        expiration = nil
+        cvv = nil
+        cardHolderName = nil
+    }
 }

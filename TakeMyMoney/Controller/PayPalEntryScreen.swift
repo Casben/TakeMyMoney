@@ -9,12 +9,13 @@ import UIKit
 
 protocol PayPalPaymentControlFlow: class {
     func disableBackgroundForPayPal()
+    func proceedWithPayPal()
 }
 
 class PayPalEntryScreen: UIView {
 
-    @IBOutlet weak var emailTextfield: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextfield: EntryField!
+    @IBOutlet weak var passwordTextField: EntryField!
     @IBOutlet weak var signInButton: UIButton!
     
     private var viewModel = PayPalEntryViewModel()
@@ -29,16 +30,13 @@ class PayPalEntryScreen: UIView {
         layer.cornerRadius = 20
         signInButton.isEnabled = false
         
+        signInButton.addTarget(self, action: #selector(continueWithPayPal), for: .touchUpInside)
         emailTextfield.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         emailTextfield.addTarget(self, action: #selector(textDidBegin), for: .editingDidBegin)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidBegin), for: .editingDidBegin)
         emailTextfield.delegate = self
         passwordTextField.delegate = self
-        
-        
-        
-        
     }
     
     
@@ -57,6 +55,17 @@ class PayPalEntryScreen: UIView {
     
     @objc func textDidBegin(_ sender: UITextField) {
         delegate?.disableBackgroundForPayPal()
+    }
+    
+    @objc func continueWithPayPal() {
+        if emailTextfield.isFirstResponder {
+            emailTextfield.resignFirstResponder()
+        } else {
+            passwordTextField.resignFirstResponder()
+        }
+        delegate?.proceedWithPayPal()
+        viewModel.resetViewModel()
+        resetTextFields(emailTextfield, passwordTextField)
     }
 
 }

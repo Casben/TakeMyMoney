@@ -107,21 +107,29 @@ class PaymentDataScreen: UIViewController {
 
 
 extension PaymentDataScreen: PayPalPaymentControlFlow {
+    
+    
     func disableBackgroundForPayPal() {
         disableBackgroundWhileEditing()
         isEditingPaypal = true
         print("paypal called")
     }
-    
+    func proceedWithPayPal() {
+    }
     
 }
 
 extension PaymentDataScreen: CreditPaymentControlFlow {
+    
+    
     func disableBackgroundForCredit() {
         disableBackgroundWhileEditing()
         isEditingPaypal = false
         payPalEntryScreen.isHidden = true
         print("credit called")
+    }
+    func proceedWithCredit() {
+        
     }
 }
 

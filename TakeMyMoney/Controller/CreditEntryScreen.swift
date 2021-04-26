@@ -9,6 +9,7 @@ import UIKit
 
 protocol CreditPaymentControlFlow: class {
     func disableBackgroundForCredit()
+    func proceedWithCredit()
 }
 
 class CreditEntryScreen: UIView {
@@ -47,7 +48,7 @@ class CreditEntryScreen: UIView {
         cvvTextField.addTarget(self, action: #selector(textdDidBegin), for: .editingDidBegin)
         cardHolderTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         cardHolderTextField.addTarget(self, action: #selector(textdDidBegin), for: .editingDidBegin)
-        
+        confirmPurchaseButton.addTarget(self, action: #selector(continueWithCredit), for: .touchUpInside)
         
         
         creditCardTextfield.delegate = self
@@ -64,7 +65,7 @@ class CreditEntryScreen: UIView {
 
     
     func evaluateForm() {
-        if viewModel.cardNumber == nil || viewModel.cardNumber?.isEmpty == true {
+        if viewModel.cardNumber == nil || viewModel.cardNumber?.isEmpty == true || viewModel.cardNumber?.count != 16 {
             creditCardLabel.presentErrorMessage(withMessage: "Enter a valid credit card number.")
             creditCardTextfield.showError()
         } else {
@@ -78,7 +79,7 @@ class CreditEntryScreen: UIView {
             expirationLabel.resetLabelText()
             expirationTextField.resetField()
         }
-        if viewModel.cvv == nil || viewModel.cvv?.isEmpty == true {
+        if viewModel.cvv == nil || viewModel.cvv?.isEmpty == true || viewModel.cvv?.count != 3, viewModel.cvv?.count != 4 {
             cvvLabel.presentErrorMessage(withMessage: "Enter CVV.")
             cvvTextField.showError()
         } else {
@@ -106,18 +107,20 @@ class CreditEntryScreen: UIView {
     }
     
     func checkIfCardHolderEntryIsValid() {
-        if let textToBeChanged = viewModel.cardHolderName {
-            if textToBeChanged.count >= 4 && textToBeChanged.first != " " {
-                if textToBeChanged.contains(" ") && textToBeChanged.last != " " {
+        if let validCardHolderName = viewModel.cardHolderName {
+            if validCardHolderName.count >= 4 && validCardHolderName.first != " " {
+                if validCardHolderName.contains(" ") && validCardHolderName.last != " " {
                     isCardHolderEntryValid = true
                 }
             } else {
                 isCardHolderEntryValid = false
             }
-            viewModel.cardHolderName = textToBeChanged
+            viewModel.cardHolderName = validCardHolderName
         }
         
     }
+    
+        
     func addDoneButtonOnKeyboard() {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         doneToolbar.barStyle = .default
@@ -168,8 +171,19 @@ class CreditEntryScreen: UIView {
         delegate?.disableBackgroundForCredit()
     }
     
-    @IBAction func confirmButtonTapped(_ sender: UIButton) {
-        evaluateForm()
+   
+    @objc func continueWithCredit() {
+        if viewModel.formIsValid {
+            if editingResponder != nil {
+                editingResponder?.resignFirstResponder()
+            }
+            viewModel.resetViewModel()
+            resetTextFields(creditCardTextfield, expirationTextField, cvvTextField, cardHolderTextField)
+            resetLabels(creditCardLabel, expirationLabel, cvvLabel, cardHolderLabel)
+            delegate?.proceedWithCredit()
+        } else {
+            evaluateForm()
+        }
     }
 }
 

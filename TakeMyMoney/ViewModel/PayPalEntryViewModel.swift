@@ -14,4 +14,9 @@ struct PayPalEntryViewModel: AuthenticationProtocol {
     var formIsValid: Bool {
         return email?.isEmpty == false && password?.isEmpty == false
     }
+    
+    mutating func resetViewModel() {
+        email = nil
+        password = nil
+    }
 }

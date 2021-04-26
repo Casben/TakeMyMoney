@@ -133,9 +133,6 @@
                                         <state key="normal" title="Continue with Credit">
                                             <color key="titleColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="confirmButtonTapped:" destination="ofN-h2-n3l" eventType="touchUpInside" id="tKm-ke-u90"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
