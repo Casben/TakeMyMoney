@@ -271,7 +271,9 @@
                         <outlet property="creditEntryScreen" destination="ofN-h2-n3l" id="yFQ-fe-UCd"/>
                         <outlet property="payPalEntryScreen" destination="j1W-dG-pu8" id="yy1-v7-Su6"/>
                         <outlet property="paymentControl" destination="W8M-lh-AQD" id="6Ib-eM-LMr"/>
-                        <outlet property="paymentLabel" destination="mDr-TW-m36" id="17z-Vt-QBc"/>
+                        <outlet property="paymentMethodLabel" destination="mDr-TW-m36" id="17z-Vt-QBc"/>
+                        <outlet property="paymentTotalLabel" destination="mYU-Hu-RZP" id="Fym-7g-9z5"/>
+                        <outlet property="totalPriceLabel" destination="swg-WF-nI0" id="ZQ4-dY-tOL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -38,9 +38,13 @@ class CreditEntryScreen: UIView {
     func configure() {
         layer.cornerRadius = 20
         creditCardTextfield.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        creditCardTextfield.addTarget(self, action: #selector(textdDidBegin), for: .editingDidBegin)
         expirationTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        expirationTextField.addTarget(self, action: #selector(textdDidBegin), for: .editingDidBegin)
         cvvTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        cvvTextField.addTarget(self, action: #selector(textdDidBegin), for: .editingDidBegin)
         cardHolderTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        cardHolderTextField.addTarget(self, action: #selector(textdDidBegin), for: .editingDidBegin)
         
         creditCardTextfield.delegate = self
         expirationTextField.delegate = self
@@ -142,8 +146,8 @@ class CreditEntryScreen: UIView {
     }
     
     
-    @IBAction func entryFieldDidEndEditing(_ sender: EntryField) {
-        sender.resignFirstResponder()
+    @objc func textdDidBegin() {
+        delegate?.disableBackgroundForCredit()
     }
     
     @IBAction func confirmButtonTapped(_ sender: UIButton) {

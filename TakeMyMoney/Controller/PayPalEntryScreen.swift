@@ -30,30 +30,20 @@ class PayPalEntryScreen: UIView {
         signInButton.isEnabled = false
         
         emailTextfield.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        emailTextfield.addTarget(self, action: #selector(textDidBegin), for: .editingDidBegin)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidBegin), for: .editingDidBegin)
         emailTextfield.delegate = self
         passwordTextField.delegate = self
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         
         
     }
     
-//    @objc func keyboardWillShow(notification: NSNotification) {
-//        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-//            return
-//        }
-//        
-//        self.view.frame.origin.y = 0 - (keyboardSize.height / 3)
-//        delegate?.disableBackgroundForPayPal()
-//    }
-//
-//    @objc func keyboardWillHide(notification: NSNotification) {
-//      self.view.frame.origin.y = 0
-//    }
     
-    @objc func textDidChange(sender: UITextField) {
+    
+    @objc func textDidChange(_ sender: UITextField) {
         switch sender {
         case emailTextfield:
             viewModel.email = sender.text
@@ -63,6 +53,10 @@ class PayPalEntryScreen: UIView {
             break
         }
         checkFormStatus()
+    }
+    
+    @objc func textDidBegin(_ sender: UITextField) {
+        delegate?.disableBackgroundForPayPal()
     }
 
 }

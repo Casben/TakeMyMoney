@@ -9,12 +9,15 @@ import UIKit
 
 class PaymentDataScreen: UIViewController {
 
-    @IBOutlet weak var payPalEntryScreen: UIView!
-    @IBOutlet weak var creditEntryScreen: UIView!
+    @IBOutlet weak var payPalEntryScreen: PayPalEntryScreen!
+    @IBOutlet weak var creditEntryScreen: CreditEntryScreen!
     @IBOutlet weak var paymentControl: UISegmentedControl!
-    @IBOutlet weak var paymentLabel: UILabel!
-    var payPalTableVC: PayPalEntryScreen!
-    var creditTableVC: CreditEntryScreen!
+    @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var paymentTotalLabel: UILabel!
+    @IBOutlet weak var paymentMethodLabel: UILabel!
+    var payPalScreenOrigin: CGFloat = 0
+    var creditScreenOrigin: CGFloat = 0
+    private var isEditingPaypal = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +25,41 @@ class PaymentDataScreen: UIViewController {
     }
     
     func configure() {
+        payPalScreenOrigin = payPalEntryScreen.frame.origin.y
+        creditScreenOrigin = creditEntryScreen.frame.origin.y
         creditEntryScreen.alpha = 0
         creditEntryScreen.isHidden = true
         paymentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         paymentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
         
+        payPalEntryScreen.delegate = self
+        creditEntryScreen.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if isEditingPaypal {
+                if view.frame.origin.y == 0 {
+                    view.frame.origin.y -= (keyboardSize.height - 250)
+                }
+            } else {
+                if view.frame.origin.y == 0 {
+                    view.frame.origin.y -= (keyboardSize.height - 110)
+                }
+            }
+        }
+        
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if view.frame.origin.y != 0 {
+            view.frame.origin.y = 0
+        }
+        restoreBackgroundAfterEditing()
+
     }
     
     
@@ -52,11 +85,29 @@ class PaymentDataScreen: UIViewController {
             
         }
     }
+    
+    func disableBackgroundWhileEditing() {
+        paymentControl.isHidden = true
+        totalPriceLabel.isHidden = true
+        paymentTotalLabel.isHidden = true
+        paymentMethodLabel.isHidden = true
+        navigationController?.navigationBar.isHidden = true
+    }
+    func restoreBackgroundAfterEditing() {
+        paymentControl.isHidden = false
+        totalPriceLabel.isHidden = false
+        paymentTotalLabel.isHidden = false
+        paymentMethodLabel.isHidden = false
+        navigationController?.navigationBar.isHidden = false
+    }
 }
+
+
 
 extension PaymentDataScreen: PayPalPaymentControlFlow {
     func disableBackgroundForPayPal() {
-        creditEntryScreen.isHidden = true
+        disableBackgroundWhileEditing()
+        isEditingPaypal = true
         print("paypal called")
     }
     
@@ -65,6 +116,8 @@ extension PaymentDataScreen: PayPalPaymentControlFlow {
 
 extension PaymentDataScreen: CreditPaymentControlFlow {
     func disableBackgroundForCredit() {
+        disableBackgroundWhileEditing()
+        isEditingPaypal = false
         payPalEntryScreen.isHidden = true
         print("credit called")
     }
