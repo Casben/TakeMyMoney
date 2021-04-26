@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB480950263679D700CC9177 /* ExpirationPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB48094F263679D700CC9177 /* ExpirationPickerData.swift */; };
 		CB54288E262E8502005EBB39 /* PayPalEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54288D262E8502005EBB39 /* PayPalEntryViewModel.swift */; };
 		CB542893262E86B9005EBB39 /* CreditEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542892262E86B9005EBB39 /* CreditEntryViewModel.swift */; };
 		CB542896262E87F7005EBB39 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542895262E87F7005EBB39 /* Protocols.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB48094F263679D700CC9177 /* ExpirationPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirationPickerData.swift; sourceTree = "<group>"; };
 		CB54288D262E8502005EBB39 /* PayPalEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalEntryViewModel.swift; sourceTree = "<group>"; };
 		CB542892262E86B9005EBB39 /* CreditEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditEntryViewModel.swift; sourceTree = "<group>"; };
 		CB542895262E87F7005EBB39 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB48094E2636799800CC9177 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB48094F263679D700CC9177 /* ExpirationPickerData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CB54288C262E84E8005EBB39 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +102,7 @@
 		CB62837A262A8EF100BEADF8 /* TakeMyMoney */ = {
 			isa = PBXGroup;
 			children = (
+				CB48094E2636799800CC9177 /* Model */,
 				CB54289F262F06CD005EBB39 /* Utilities */,
 				CB54288C262E84E8005EBB39 /* ViewModel */,
 				CBA69D4E262B573500B0BDA5 /* View */,
@@ -205,6 +216,7 @@
 				CB542893262E86B9005EBB39 /* CreditEntryViewModel.swift in Sources */,
 				CB5428A1262F06DC005EBB39 /* Extensions.swift in Sources */,
 				CBA69D50262B574300B0BDA5 /* ConfirmButton.swift in Sources */,
+				CB480950263679D700CC9177 /* ExpirationPickerData.swift in Sources */,
 				CB54288E262E8502005EBB39 /* PayPalEntryViewModel.swift in Sources */,
 				CB628393262A909900BEADF8 /* PaymentDataScreen.swift in Sources */,
 				CB54289D262E9B7A005EBB39 /* EntryLabel.swift in Sources */,

@@ -15,6 +15,7 @@ class PaymentDataScreen: UIViewController {
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var paymentTotalLabel: UILabel!
     @IBOutlet weak var paymentMethodLabel: UILabel!
+    
     var payPalScreenOrigin: CGFloat = 0
     var creditScreenOrigin: CGFloat = 0
     private var isEditingPaypal = false
@@ -34,6 +35,7 @@ class PaymentDataScreen: UIViewController {
         
         payPalEntryScreen.delegate = self
         creditEntryScreen.delegate = self
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
@@ -47,7 +49,7 @@ class PaymentDataScreen: UIViewController {
                 }
             } else {
                 if view.frame.origin.y == 0 {
-                    view.frame.origin.y -= (keyboardSize.height - 110)
+                    view.frame.origin.y -= (keyboardSize.height - 175)
                 }
             }
         }

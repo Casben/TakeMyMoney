@@ -25,6 +25,8 @@ class CreditEntryScreen: UIView {
     @IBOutlet weak var confirmPurchaseButton: ConfirmButton!
     
     private var viewModel = CreditEntryViewModel()
+    let expirationPicker = UIPickerView()
+    var editingResponder: UITextField?
     
     private var isCardHolderEntryValid = false
     
@@ -46,26 +48,20 @@ class CreditEntryScreen: UIView {
         cardHolderTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         cardHolderTextField.addTarget(self, action: #selector(textdDidBegin), for: .editingDidBegin)
         
+        
+        
         creditCardTextfield.delegate = self
         expirationTextField.delegate = self
         cvvTextField.delegate = self
         cardHolderTextField.delegate = self
+        expirationPicker.delegate = self
+        expirationPicker.dataSource = self
+        expirationTextField.inputView = expirationPicker
+        addDoneButtonOnKeyboard()
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-//    @objc func keyboardWillShow(notification: NSNotification) {
-//        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-//            return
-//        }
-//        self.view.frame.origin.y = 0 - (keyboardSize.height - 50)
-//        delegate?.disableBackgroundForCredit()
-//    }
-//
-//    @objc func keyboardWillHide(notification: NSNotification) {
-//      self.view.frame.origin.y = 0
-//    }
+
     
     func evaluateForm() {
         if viewModel.cardNumber == nil || viewModel.cardNumber?.isEmpty == true {
@@ -112,15 +108,38 @@ class CreditEntryScreen: UIView {
     func checkIfCardHolderEntryIsValid() {
         if let textToBeChanged = viewModel.cardHolderName {
             if textToBeChanged.count >= 4 && textToBeChanged.first != " " {
-                print("name is long enough and no space at the beginning")
                 if textToBeChanged.contains(" ") && textToBeChanged.last != " " {
                     isCardHolderEntryValid = true
                 }
             } else {
                 isCardHolderEntryValid = false
             }
+            viewModel.cardHolderName = textToBeChanged
         }
         
+    }
+    func addDoneButtonOnKeyboard() {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
+        doneButton.tintColor = .systemIndigo
+        
+        let items = [flexSpace, doneButton]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        creditCardTextfield.inputAccessoryView = doneToolbar
+        expirationTextField.inputAccessoryView = doneToolbar
+        cvvTextField.inputAccessoryView = doneToolbar
+        cardHolderTextField.inputAccessoryView = doneToolbar
+        
+    }
+    
+    @objc func doneButtonAction() {
+        editingResponder?.resignFirstResponder()
+        editingResponder = nil
     }
     
     @objc func textDidChange(_ sender: UITextField) {
@@ -128,8 +147,6 @@ class CreditEntryScreen: UIView {
         case creditCardTextfield:
             viewModel.cardNumber = sender.text
             updateCreditCardTextField()
-        case expirationTextField:
-            viewModel.expiration = sender.text
         case cvvTextField:
             viewModel.cvv = sender.text
         case cardHolderTextField:
@@ -146,7 +163,8 @@ class CreditEntryScreen: UIView {
     }
     
     
-    @objc func textdDidBegin() {
+    @objc func textdDidBegin(_ sender: UITextField) {
+        editingResponder = sender
         delegate?.disableBackgroundForCredit()
     }
     
@@ -159,6 +177,7 @@ extension CreditEntryScreen: AuthenticationControllerProtocol {
     func checkFormStatus() {
         if viewModel.formIsValid {
             confirmPurchaseButton.backgroundColor = .systemIndigo
+            print("PROCEEEEED")
         } else {
             confirmPurchaseButton.backgroundColor = .darkGray
         }
@@ -214,3 +233,22 @@ extension CreditEntryScreen: UITextFieldDelegate {
 }
 
 
+extension CreditEntryScreen: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return ExpirationPickerData.instance.monthsAndYears[component].count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return ExpirationPickerData.instance.monthsAndYears[component][row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let month = ExpirationPickerData.instance.monthsAndYears[0][pickerView.selectedRow(inComponent: 0)]
+        let year = ExpirationPickerData.instance.monthsAndYears[1][pickerView.selectedRow(inComponent: 1)]
+        expirationTextField.text = "\(month)/\(year)"
+        viewModel.expiration = expirationTextField.text
+    }
+}
