@@ -74,6 +74,14 @@ class PaymentDataScreen: UIViewController {
         navigationController?.navigationBar.isHidden = false
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PaymentConfirmationSegue" {
+            let navVC = segue.destination as! UINavigationController
+            let paymentConfirmationVC = navVC.topViewController as! PaymentConfirmationScreenViewController
+            paymentConfirmationVC.credentials = sender
+        }
+    }
+    
     //MARK: - Actions
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -116,30 +124,31 @@ class PaymentDataScreen: UIViewController {
 
 extension PaymentDataScreen: PayPalPaymentControlFlow {
     
-    
     func disableBackgroundForPayPal() {
         disableBackgroundWhileEditing()
         isEditingPaypal = true
-        print("paypal called")
+        
     }
-    func proceedWithPayPal() {
+    
+    func proceedWithPayPal(withCredentials credentials: PayPalEntryViewModel) {
+        print(credentials)
+        performSegue(withIdentifier: "PaymentConfirmationSegue", sender: credentials)
     }
+    
     
 }
 
 //MARK: - CreditPaymentControlFlow
 
 extension PaymentDataScreen: CreditPaymentControlFlow {
-    
-    
+
     func disableBackgroundForCredit() {
         disableBackgroundWhileEditing()
         isEditingPaypal = false
         payPalEntryScreen.isHidden = true
-        print("credit called")
     }
-    func proceedWithCredit() {
-        
+    func proceedWithCredit(withCredentials credentials: CreditEntryViewModel) {
+        performSegue(withIdentifier: "PaymentConfirmationSegue", sender: credentials)
     }
 }
 

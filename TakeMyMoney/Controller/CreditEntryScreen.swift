@@ -12,7 +12,7 @@ import UIKit
 
 protocol CreditPaymentControlFlow: class {
     func disableBackgroundForCredit()
-    func proceedWithCredit()
+    func proceedWithCredit(withCredentials credentials: CreditEntryViewModel)
 }
 
 class CreditEntryScreen: UIView {
@@ -190,10 +190,11 @@ class CreditEntryScreen: UIView {
             if editingResponder != nil {
                 editingResponder?.resignFirstResponder()
             }
-            delegate?.proceedWithCredit()
+            delegate?.proceedWithCredit(withCredentials: viewModel)
             viewModel.resetViewModel()
             resetTextFields(creditCardTextfield, expirationTextField, cvvTextField, cardHolderTextField)
             resetLabels(creditCardLabel, expirationLabel, cvvLabel, cardHolderLabel)
+            confirmPurchaseButton.backgroundColor = .darkGray
             checkFormStatus()
         } else {
             evaluateForm()

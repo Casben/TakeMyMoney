@@ -11,7 +11,7 @@ import UIKit
 
 protocol PayPalPaymentControlFlow: class {
     func disableBackgroundForPayPal()
-    func proceedWithPayPal()
+    func proceedWithPayPal(withCredentials credentials: PayPalEntryViewModel)
 }
 
 class PayPalEntryScreen: UIView {
@@ -72,7 +72,7 @@ class PayPalEntryScreen: UIView {
         } else {
             passwordTextField.resignFirstResponder()
         }
-        delegate?.proceedWithPayPal()
+        delegate?.proceedWithPayPal(withCredentials: viewModel)
         viewModel.resetViewModel()
         resetTextFields(emailTextfield, passwordTextField)
         checkFormStatus()

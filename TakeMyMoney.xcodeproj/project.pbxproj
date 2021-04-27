@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB480950263679D700CC9177 /* ExpirationPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB48094F263679D700CC9177 /* ExpirationPickerData.swift */; };
+		CB4809552637A2C100CC9177 /* PaymentConfirmationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4809542637A2C100CC9177 /* PaymentConfirmationScreenViewController.swift */; };
 		CB54288E262E8502005EBB39 /* PayPalEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54288D262E8502005EBB39 /* PayPalEntryViewModel.swift */; };
 		CB542893262E86B9005EBB39 /* CreditEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542892262E86B9005EBB39 /* CreditEntryViewModel.swift */; };
 		CB542896262E87F7005EBB39 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542895262E87F7005EBB39 /* Protocols.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		CB48094F263679D700CC9177 /* ExpirationPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirationPickerData.swift; sourceTree = "<group>"; };
+		CB4809542637A2C100CC9177 /* PaymentConfirmationScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationScreenViewController.swift; sourceTree = "<group>"; };
 		CB54288D262E8502005EBB39 /* PayPalEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalEntryViewModel.swift; sourceTree = "<group>"; };
 		CB542892262E86B9005EBB39 /* CreditEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditEntryViewModel.swift; sourceTree = "<group>"; };
 		CB542895262E87F7005EBB39 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				CB628392262A909900BEADF8 /* PaymentDataScreen.swift */,
 				CBA69D48262AAD9700B0BDA5 /* PayPalEntryScreen.swift */,
 				CBA69D55262B591700B0BDA5 /* CreditEntryScreen.swift */,
+				CB4809542637A2C100CC9177 /* PaymentConfirmationScreenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				CBA69D53262B583500B0BDA5 /* EntryField.swift in Sources */,
 				CB62837C262A8EF100BEADF8 /* AppDelegate.swift in Sources */,
 				CB62837E262A8EF100BEADF8 /* SceneDelegate.swift in Sources */,
+				CB4809552637A2C100CC9177 /* PaymentConfirmationScreenViewController.swift in Sources */,
 				CBA69D56262B591700B0BDA5 /* CreditEntryScreen.swift in Sources */,
 				CB542896262E87F7005EBB39 /* Protocols.swift in Sources */,
 				CB542893262E86B9005EBB39 /* CreditEntryViewModel.swift in Sources */,
