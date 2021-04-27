@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol PaymentConfirmationDelegate: class {
+    func completePurchase()
+}
+
 class PaymentConfirmationScreenViewController: UIViewController {
+    
+    //MARK: - Properties
 
     @IBOutlet weak var couponImageView: UIImageView!
     @IBOutlet weak var paymentInfoView: UIView!
@@ -20,11 +26,17 @@ class PaymentConfirmationScreenViewController: UIViewController {
     private var payPalCredentials: PayPalEntryViewModel?
     private var creditCredentials: CreditEntryViewModel?
     
+    weak var delegate: PaymentConfirmationDelegate?
+    
+    //MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareCredentials()
         configure()
     }
+    
+    //MARK: - Configuration
     
     func configure() {
         couponImageView.layer.cornerRadius = 10
@@ -57,8 +69,14 @@ class PaymentConfirmationScreenViewController: UIViewController {
         credentialsLabel.text = creditCredentials?.cardNumber
     }
     
+    //MARK: - Methods
+    
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
+    }
+    
+    @IBAction func payButtonTapped(_ sender: UIButton) {
+        delegate?.completePurchase()
     }
     
 }

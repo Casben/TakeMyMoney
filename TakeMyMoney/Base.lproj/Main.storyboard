@@ -309,8 +309,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92l-iS-f9a">
                                 <rect key="frame" x="20" y="448" width="350" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dHf-m8-f0f">
-                                        <rect key="frame" x="16" y="23" width="60" height="55"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PayPalLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dHf-m8-f0f">
+                                        <rect key="frame" x="16" y="20" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="gQj-Os-pc2"/>
                                             <constraint firstAttribute="width" constant="60" id="pME-LO-5ST"/>
@@ -366,6 +366,9 @@
                                 <state key="normal" title="Pay">
                                     <color key="titleColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="payButtonTapped:" destination="e0l-B8-F18" eventType="touchUpInside" id="7WB-1V-ckV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FfJ-1F-7Qo"/>
@@ -404,7 +407,7 @@
                         <outlet property="couponImageView" destination="FSu-6K-XdC" id="hMT-ux-OQ6"/>
                         <outlet property="credentialsImageView" destination="dHf-m8-f0f" id="Ldc-mW-mdW"/>
                         <outlet property="credentialsLabel" destination="6Cd-dD-cEK" id="XJG-wA-UFS"/>
-                        <outlet property="credentialsSubLabel" destination="id3-Wj-e6f" id="G4c-6i-WWk"/>
+                        <outlet property="credentialsSubLabel" destination="id3-Wj-e6f" id="kXa-0d-0SX"/>
                         <outlet property="payButton" destination="hlo-cD-KwM" id="Xwm-TC-AwH"/>
                         <outlet property="paymentInfoView" destination="92l-iS-f9a" id="M4G-4W-dgv"/>
                     </connections>
@@ -451,8 +454,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="PayPalLogo" width="3840" height="2160"/>
         <image name="coupon" width="379" height="277"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

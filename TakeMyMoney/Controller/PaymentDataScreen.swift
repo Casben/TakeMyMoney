@@ -21,6 +21,7 @@ class PaymentDataScreen: UIViewController {
     var payPalScreenOrigin: CGFloat = 0
     var creditScreenOrigin: CGFloat = 0
     private var isEditingPaypal = false
+    private let segueIdentifier = "PaymentConfirmationSegue"
     
     //MARK: - Lifecycle
     
@@ -60,25 +61,22 @@ class PaymentDataScreen: UIViewController {
     }
     
     func disableBackgroundWhileEditing() {
-        paymentControl.isHidden = true
+        paymentControl.isEnabled = false
         totalPriceLabel.isHidden = true
-        paymentTotalLabel.isHidden = true
-        paymentMethodLabel.isHidden = true
         navigationController?.navigationBar.isHidden = true
     }
     func restoreBackgroundAfterEditing() {
-        paymentControl.isHidden = false
+        paymentControl.isEnabled = true
         totalPriceLabel.isHidden = false
-        paymentTotalLabel.isHidden = false
-        paymentMethodLabel.isHidden = false
         navigationController?.navigationBar.isHidden = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PaymentConfirmationSegue" {
+        if segue.identifier == segueIdentifier {
             let navVC = segue.destination as! UINavigationController
             let paymentConfirmationVC = navVC.topViewController as! PaymentConfirmationScreenViewController
             paymentConfirmationVC.credentials = sender
+            paymentConfirmationVC.delegate = self
         }
     }
     
@@ -132,7 +130,7 @@ extension PaymentDataScreen: PayPalPaymentControlFlow {
     
     func proceedWithPayPal(withCredentials credentials: PayPalEntryViewModel) {
         print(credentials)
-        performSegue(withIdentifier: "PaymentConfirmationSegue", sender: credentials)
+        performSegue(withIdentifier: segueIdentifier, sender: credentials)
     }
     
     
@@ -145,13 +143,24 @@ extension PaymentDataScreen: CreditPaymentControlFlow {
     func disableBackgroundForCredit() {
         disableBackgroundWhileEditing()
         isEditingPaypal = false
-        payPalEntryScreen.isHidden = true
     }
+    
     func proceedWithCredit(withCredentials credentials: CreditEntryViewModel) {
-        performSegue(withIdentifier: "PaymentConfirmationSegue", sender: credentials)
+        performSegue(withIdentifier: segueIdentifier, sender: credentials)
     }
 }
 
 
 
 
+extension PaymentDataScreen: PaymentConfirmationDelegate {
+    func completePurchase() {
+        let alertVC = UIAlertController(title: "Unable to complete purchase", message: "Please try again.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default)
+        action.setValue(UIColor.systemIndigo, forKey: "titleTextColor")
+        alertVC.addAction(action)
+        dismiss(animated: true) {
+            self.present(alertVC, animated: true)
+        }
+    }
+}
